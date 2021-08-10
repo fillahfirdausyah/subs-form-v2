@@ -2,7 +2,7 @@
 import "./App.css";
 
 // Component
-import { Header, Main, Sidebar } from "./Component";
+import { Header, Sidebar } from "./Component";
 import Dashboard from "./Component/Dashboard";
 
 function App() {
