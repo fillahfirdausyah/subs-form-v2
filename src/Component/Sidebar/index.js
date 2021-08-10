@@ -6,7 +6,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import AvTimerIcon from "@material-ui/icons/AvTimer";
 import NoteAddIcon from "@material-ui/icons/NoteAdd";
 import DescriptionIcon from "@material-ui/icons/Description";
-import ChatBubbleOutlineOutlinedIcon from "@material-ui/icons/ChatBubbleOutlineOutlined";
+import ExitToAppOutlinedIcon from "@material-ui/icons/ExitToAppOutlined";
 
 function Sidebar() {
   return (
@@ -29,7 +29,7 @@ function Sidebar() {
       <footer>
         <hr />
         <div className="footer-item">
-          <ChatBubbleOutlineOutlinedIcon fontSize="small" />
+          <ExitToAppOutlinedIcon fontSize="small" />
         </div>
       </footer>
     </div>

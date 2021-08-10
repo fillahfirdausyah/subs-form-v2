@@ -1,8 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 
 // Asset
 import "./style.css";
-import ExpandMoreOutlinedIcon from '@material-ui/icons/ExpandMoreOutlined';
 
 function Header() {
   return (

@@ -78,4 +78,12 @@
   background-color: #3a3a3c;
   box-sizing: border-box;
   border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: red;
+}
+
+.sidebar footer .footer-item:hover {
+  cursor: pointer;
 }

@@ -16,3 +16,9 @@ body {
   color: rgb(122, 122, 122);
   margin: 0;
 }
+
+.btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
