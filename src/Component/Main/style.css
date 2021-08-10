@@ -5,9 +5,10 @@
 
 .main .main-info {
   margin-left: 40px;
+  margin-right: 40px;
 }
 
 .main .main-info h4 {
-  color: #5E5CE6;
+  color: #5e5ce6;
   font-weight: 500;
 }

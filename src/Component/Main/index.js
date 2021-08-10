@@ -1,13 +1,14 @@
 import React from "react";
 
 // Asset
-import './style.css'
+import "./style.css";
 
-function Main() {
+function Main(props) {
   return (
     <div className="main">
       <div className="main-info">
-        <h4>Dashboard</h4>
+        <h4>{props.title}</h4>
+        <div className="main-wrapper">{props.children}</div>
       </div>
     </div>
   );
