@@ -1,0 +1,13 @@
+.main {
+  margin-left: 80px;
+  min-height: calc(100vh - 94px);
+}
+
+.main .main-info {
+  margin-left: 40px;
+}
+
+.main .main-info h4 {
+  color: #5E5CE6;
+  font-weight: 500;
+}
