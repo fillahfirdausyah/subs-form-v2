@@ -1,17 +1,24 @@
 // Asset
 import "./App.css";
 
+// Context
+import { AnimateProvider } from "./Context/Animate";
+
 // Component
 import { Header, Sidebar } from "./Component";
 import Dashboard from "./Component/Dashboard";
 
 function App() {
   return (
-    <div className="app">
-      <Header />
-      <Sidebar />
-      <Dashboard />
-    </div>
+    <>
+      <AnimateProvider>
+        <div className="app">
+          <Header />
+          <Sidebar />
+          <Dashboard />
+        </div>
+      </AnimateProvider>
+    </>
   );
 }
 
