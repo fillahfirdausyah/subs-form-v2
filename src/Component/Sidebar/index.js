@@ -1,5 +1,8 @@
 import React from "react";
 
+// Contex
+import { useAnimate } from "../../Context/Animate";
+
 // Asset
 import "./style.css";
 import MenuIcon from "@material-ui/icons/Menu";
@@ -9,6 +12,16 @@ import DescriptionIcon from "@material-ui/icons/Description";
 import ExitToAppOutlinedIcon from "@material-ui/icons/ExitToAppOutlined";
 
 function Sidebar() {
+  const { addAnimate, animate } = useAnimate();
+
+  const showForm = () => {
+    if (animate === "up") {
+      addAnimate("down");
+    } else {
+      addAnimate("up");
+    }
+  };
+
   return (
     <div className="sidebar">
       <header>
@@ -19,7 +32,7 @@ function Sidebar() {
         <li className="mb-3 active">
           <AvTimerIcon className="nav-icon" />
         </li>
-        <li className="mb-3">
+        <li className="mb-3" onClick={showForm}>
           <NoteAddIcon />
         </li>
         <li className="mb-3">
