@@ -11,7 +11,6 @@ function Main(props) {
         <h4>{props.title}</h4>
         <div className="main-wrapper">{props.children}</div>
       </div>
-      <LayerForm />
     </div>
   );
 }
