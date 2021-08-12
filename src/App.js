@@ -1,5 +1,4 @@
 // Asset
-import "./App.css";
 import Router from "./Route";
 
 // Context
@@ -9,9 +8,7 @@ function App() {
   return (
     <>
       <AnimateProvider>
-        <div className="app">
-          <Router />
-        </div>
+        <Router />
       </AnimateProvider>
     </>
   );

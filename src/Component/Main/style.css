@@ -1,6 +1,6 @@
 .main {
   margin-left: 80px;
-  min-height: calc(100vh - 70px);
+  min-height: calc(100vh - 72px);
   position: relative;
   overflow: hidden;
 }

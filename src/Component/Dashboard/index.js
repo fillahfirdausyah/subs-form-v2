@@ -9,7 +9,7 @@ function Dashboard() {
     <div className="dashboard">
       <Main title="Dashboard">
         <div className="row">
-          <div className="col-8">
+          <div className="col-lg-8 col-md-12">
             <div className="card">
               <div className="card-header">
                 <h5>List Client</h5>
@@ -36,7 +36,7 @@ function Dashboard() {
               </div>
             </div>
           </div>
-          <div className="col-4">
+          <div className="col-lg-4 col-md-12">
             <div className="card">
               <div className="card-header">
                 <h5>Dokumen Belum Terisi</h5>

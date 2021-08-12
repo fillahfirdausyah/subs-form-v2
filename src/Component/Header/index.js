@@ -18,11 +18,8 @@ function Header() {
         </li>
       </nav>
       <div className="user-info">
-        <h4>Han Jihyoo</h4>
-        <img
-          src="https://images.genius.com/02c05a615d243a455f1148ae83a59c93.1000x1000x1.jpg"
-          alt=""
-        />
+        <h4>Jihan Weeekly (지효) &#128158;</h4>
+        <img src="https://static.asiachan.com/Jihan.full.250009.jpg" alt="" />
       </div>
     </div>
   );

@@ -3,5 +3,7 @@ import Sidebar from "./Sidebar";
 import Header from "./Header";
 import Backdrop from "./Backdrop";
 import LayerForm from "./LayerForm";
+import Dashboard from "./Dashboard";
+import Login from "./Login";
 
-export { Main, Sidebar, Header, Backdrop, LayerForm };
+export { Main, Sidebar, Header, Backdrop, LayerForm, Dashboard, Login };
