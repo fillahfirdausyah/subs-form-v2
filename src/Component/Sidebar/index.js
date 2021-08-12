@@ -2,6 +2,7 @@ import React from "react";
 
 // Contex
 import { useAnimate } from "../../Context/Animate";
+import { useAuth } from "../../Context/AuthContext";
 
 // Asset
 import "./style.css";
@@ -13,6 +14,7 @@ import ExitToAppOutlinedIcon from "@material-ui/icons/ExitToAppOutlined";
 
 function Sidebar() {
   const { addAnimate, animate, addBackdrop } = useAnimate();
+  const { logout } = useAuth();
 
   const showForm = () => {
     if (animate === "up") {
@@ -22,6 +24,10 @@ function Sidebar() {
       addAnimate("up");
       addBackdrop("show");
     }
+  };
+
+  const handleLogOut = () => {
+    logout();
   };
 
   return (
@@ -43,7 +49,7 @@ function Sidebar() {
       </nav>
       <footer>
         <hr />
-        <div className="footer-item">
+        <div className="footer-item" onClick={handleLogOut}>
           <ExitToAppOutlinedIcon fontSize="small" />
         </div>
       </footer>
