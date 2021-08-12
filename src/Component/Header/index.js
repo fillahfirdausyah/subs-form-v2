@@ -8,19 +8,23 @@ import "./style.css";
 function Header() {
   const { currentUser } = useAuth();
 
-  console.log(currentUser);
-
   return (
     <div className="header">
       <nav>
         <li>
-          <a href="">Dashboard</a>
+          <a href="/dashboard" key="xkl1">
+            Dashboard
+          </a>
         </li>
         <li>
-          <a href="">Document</a>
+          <a href="/document" key="xkl2">
+            Document
+          </a>
         </li>
         <li>
-          <a href="">Form</a>
+          <a href="/form" key="xkl3">
+            Form
+          </a>
         </li>
       </nav>
       <div className="user-info">
