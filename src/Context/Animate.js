@@ -8,7 +8,7 @@ export function useAnimate() {
 
 export function AnimateProvider({ children }) {
   const [animate, setAnimate] = useState("");
-  const [backDrop, setBackDrop] = useState("");
+  const [backdrop, setBackDrop] = useState("");
 
   function addAnimate(val) {
     setAnimate(val);
@@ -21,7 +21,7 @@ export function AnimateProvider({ children }) {
   const value = {
     animate,
     addAnimate,
-    backDrop,
+    backdrop,
     addBackdrop,
   };
 
