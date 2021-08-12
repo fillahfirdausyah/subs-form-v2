@@ -16,6 +16,7 @@
   border-radius: 10px;
   cursor: pointer;
   transition: filter 300ms;
+  height: 9vh;
 }
 
 .login-container .login:hover {
