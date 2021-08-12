@@ -6,15 +6,19 @@
   background-color: rgba(0, 0, 0, 0.37);
   backdrop-filter: blur(0.9px);
   display: none;
+  overflow: hidden;
 }
 
 .backdrop.show {
   animation: default 0.5s ease forwards;
-  display: block;
+  display: flex;
+  justify-content: center;
 }
 
 .backdrop.not-show {
-  animation: notShow 5s ease forwards;
+  animation: notShow 1s ease forwards;
+  display: flex;
+  justify-content: center;
 }
 
 @keyframes default {
@@ -37,4 +41,4 @@
     opacity: 0;
     pointer-events: none;
   }
-} ;
+}

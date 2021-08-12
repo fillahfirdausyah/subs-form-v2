@@ -5,9 +5,10 @@ import { useAnimate } from "../../Context/Animate";
 // Asset
 import "./style.css";
 
-function Backdrop() {
-  const { backDrop } = useAnimate();
-  return <div className={`backdrop ${backDrop}`}></div>;
+function Backdrop({ children }) {
+  const { backdrop } = useAnimate();
+
+  return <div className={`backdrop ${backdrop}`}>{children}</div>;
 }
 
 export default Backdrop;
