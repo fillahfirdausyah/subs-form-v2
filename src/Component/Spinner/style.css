@@ -1,0 +1,29 @@
+.spinner-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border: 4px solid #dddddd;
+  border-top-color: #817fec;
+  border-radius: 50%;
+  animation: spinner 1s ease infinite;
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(1turn);
+  }
+}
