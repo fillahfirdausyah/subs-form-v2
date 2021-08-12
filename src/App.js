@@ -5,7 +5,7 @@ import "./App.css";
 import { AnimateProvider } from "./Context/Animate";
 
 // Component
-import { Header, Sidebar } from "./Component";
+import { Header, Sidebar, LayerForm } from "./Component";
 import Dashboard from "./Component/Dashboard";
 
 function App() {
@@ -16,6 +16,7 @@ function App() {
           <Header />
           <Sidebar />
           <Dashboard />
+          <LayerForm />
         </div>
       </AnimateProvider>
     </>
