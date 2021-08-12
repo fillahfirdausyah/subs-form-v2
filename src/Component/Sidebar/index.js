@@ -12,13 +12,15 @@ import DescriptionIcon from "@material-ui/icons/Description";
 import ExitToAppOutlinedIcon from "@material-ui/icons/ExitToAppOutlined";
 
 function Sidebar() {
-  const { addAnimate, animate } = useAnimate();
+  const { addAnimate, animate, addBackdrop } = useAnimate();
 
   const showForm = () => {
     if (animate === "up") {
       addAnimate("down");
+      addBackdrop("not-show");
     } else {
       addAnimate("up");
+      addBackdrop("show");
     }
   };
 
