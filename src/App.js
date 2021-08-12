@@ -3,13 +3,16 @@ import Router from "./Route";
 
 // Context
 import { AnimateProvider } from "./Context/Animate";
+import { AuthProvider } from "./Context/AuthContext";
 
 function App() {
   return (
     <>
-      <AnimateProvider>
-        <Router />
-      </AnimateProvider>
+      <AuthProvider>
+        <AnimateProvider>
+          <Router />
+        </AnimateProvider>
+      </AuthProvider>
     </>
   );
 }
