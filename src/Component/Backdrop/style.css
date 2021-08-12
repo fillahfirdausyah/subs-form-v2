@@ -1,0 +1,40 @@
+.backdrop {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur(0.9px);
+  display: none;
+}
+
+.backdrop.show {
+  animation: default 0.5s ease forwards;
+  display: block;
+}
+
+.backdrop.not-show {
+  animation: notShow 5s ease forwards;
+}
+
+@keyframes default {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes notShow {
+  from {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  to {
+    opacity: 0;
+    pointer-events: none;
+  }
+} ;
