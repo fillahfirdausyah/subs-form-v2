@@ -1,5 +1,6 @@
 .dashboard .card {
   width: 100%;
+  margin-bottom: 20px;
   border-radius: 7px;
   background-color: #3a3a3c;
   box-shadow: 2px 3px 12px -5px rgba(0, 0, 0, 0.75);
