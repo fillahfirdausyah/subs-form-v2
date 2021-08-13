@@ -1,24 +1,66 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useAuth } from "../../../Context/AuthContext";
+import { useAnimate } from "../../../Context/Animate";
 
 function FilledBy({ getFilledBy }) {
+  const { currentUser } = useAuth();
+  const { animate } = useAnimate();
   const [namaFile, setNamaFile] = useState("");
+  const [nama, setNama] = useState("");
   const [data, setData] = useState({});
 
+  useEffect(() => {
+    setNamaFile("");
+  }, [animate]);
 
-  
+  useEffect(() => {
+    setNama(currentUser.displayName);
+  }, []);
+
+  const handleChange = (e) => {
+    const { value } = e.target;
+    const newData = {
+      nama,
+      tanggal: value,
+    };
+
+    setData(newData);
+  };
 
   const fileHandler = (e) => {
     const file = e.target.files[0];
     setNamaFile(file.name);
+
+    let date = Date.now();
+    const imgName = `${date}-${file.name}`;
+    const newData = {
+      ...data,
+      imgName,
+      [e.target.name]: file,
+    };
+
+    getFilledBy(newData);
   };
 
   return (
     <>
       <h3>Diisi Oleh Buana Lintas Media</h3>
-      <input type="text" id="price" placeholder="Nama Marketing" />
-      <input type="date" className="date" placeholder="Tanggal" />
-      <label class="custom-file-upload">
-        <input type="file" onChange={fileHandler} />
+      <input
+        type="text"
+        id="nama"
+        placeholder="Nama Marketing"
+        value={nama}
+        disabled
+      />
+      <input
+        type="date"
+        className="date"
+        placeholder="Tanggal"
+        onChange={handleChange}
+        required
+      />
+      <label className="custom-file-upload">
+        <input type="file" onChange={fileHandler} name="ttd" required />
         {namaFile === "" ? "Tanda Tangan" : <span>{namaFile}</span>}
       </label>
     </>
