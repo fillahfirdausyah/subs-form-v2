@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 // Asset
 import "./style.css";
+import Spinner from "../Spinner";
 
 // Context
 import { useAnimate } from "../../Context/Animate";
@@ -12,7 +13,7 @@ import Information from "./Parts/Information";
 import SubscriptionFee from "./Parts/SubscriptionFee";
 import FilledBy from "./Parts/FilledBy";
 
-function LayerForm() {
+function LayerForm({ postData, loading }) {
   const { addAnimate, animate, addBackdrop } = useAnimate();
   const [information, setInformation] = useState({});
   const [subscriptionFee, setSubscriptionFee] = useState({});
@@ -37,14 +38,13 @@ function LayerForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     const newData = {
       information,
       subscriptionFee,
       filledBy,
     };
-
-    console.log(newData);
+    e.target.reset();
+    postData(newData);
   };
 
   return (
@@ -55,7 +55,13 @@ function LayerForm() {
           <Information getInformation={getInformation} />
           <SubscriptionFee getSubscriptionFee={getSubscriptionFee} />
           <FilledBy getFilledBy={getFilledBy} />
-          <button className="btn btn-simpan">Simpan</button>
+          {loading ? (
+            <button className="btn btn-simpan">
+              <Spinner />
+            </button>
+          ) : (
+            <button className="btn btn-simpan">Buat</button>
+          )}
         </form>
       </div>
     </Backdrop>
