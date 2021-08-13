@@ -2,7 +2,6 @@ import React from "react";
 
 // Asset
 import "./style.css";
-import LayerForm from "../LayerForm";
 
 function Main(props) {
   return (
