@@ -1,10 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useAnimate } from "../../../Context/Animate";
 
 function SubscriptionFee({ getSubscriptionFee }) {
+  const { animate } = useAnimate();
   const [data, setData] = useState({
     biayaSetup: "",
     biayaLayanan: "",
   });
+
+  useEffect(() => {
+    if (animate == "up") {
+      setData({
+        biayaSetup: "",
+        biayaLayanan: "",
+      });
+    }
+  }, [animate]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -26,6 +37,7 @@ function SubscriptionFee({ getSubscriptionFee }) {
         value={data.biayaSetup}
         name="biayaSetup"
         onChange={handleChange}
+        required
       />
       <input
         type="number"
@@ -34,6 +46,7 @@ function SubscriptionFee({ getSubscriptionFee }) {
         value={data.biayaLayanan}
         name="biayaLayanan"
         onChange={handleChange}
+        required
       />
     </>
   );
