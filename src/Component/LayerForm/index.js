@@ -8,36 +8,53 @@ import { useAnimate } from "../../Context/Animate";
 
 // Component
 import Backdrop from "../Backdrop/";
+import Information from "./Parts/Information";
+import SubscriptionFee from "./Parts/SubscriptionFee";
+import FilledBy from "./Parts/FilledBy";
 
 function LayerForm() {
-  const [namaFile, setNamaFile] = useState("");
   const { addAnimate, animate, addBackdrop } = useAnimate();
-
-  const fileHandler = (e) => {
-    const file = e.target.files[0];
-    setNamaFile(file.name);
-  };
+  const [information, setInformation] = useState({});
+  const [subscriptionFee, setSubscriptionFee] = useState({});
+  const [filledBy, setFilledBy] = useState({});
 
   const closeForm = () => {
     addAnimate("down");
     addBackdrop("not-show");
   };
 
+  const getInformation = (data) => {
+    setInformation(data);
+  };
+
+  const getSubscriptionFee = (data) => {
+    setSubscriptionFee(data);
+  };
+
+  const getFilledBy = (data) => {
+    setFilledBy(data);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const newData = {
+      information,
+      subscriptionFee,
+      filledBy,
+    };
+
+    console.log(newData);
+  };
+
   return (
     <Backdrop>
       <div className={`layer-form ${animate}`}>
         <hr onClick={closeForm} />
-        <form action="">
-          <h3>Biaya Berlangganan</h3>
-          <input type="text" id="price" placeholder="Biaya Setup" />
-          <input type="text" id="price" placeholder="Biaya Layanan" />
-          <h3>Diisi Oleh Buana Lintas Media</h3>
-          <input type="text" id="price" placeholder="Nama Marketing" />
-          <input type="date" className="date" placeholder="Tanggal" />
-          <label class="custom-file-upload">
-            <input type="file" onChange={fileHandler} />
-            {namaFile === "" ? "Tanda Tangan" : <span>{namaFile}</span>}
-          </label>
+        <form onSubmit={handleSubmit}>
+          <Information getInformation={getInformation} />
+          <SubscriptionFee getSubscriptionFee={getSubscriptionFee} />
+          <FilledBy getFilledBy={getFilledBy} />
           <button className="btn btn-simpan">Simpan</button>
         </form>
       </div>
