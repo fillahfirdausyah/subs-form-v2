@@ -16,22 +16,26 @@ function Dashboard() {
               </div>
               <div className="card-body">
                 <table>
-                  <tr>
-                    <td>No</td>
-                    <td>Nama Perusahaan</td>
-                    <td>Penanggung Jawab</td>
-                    <td>Aksi</td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>PT. Buana Lintas Media</td>
-                    <td>Fillah</td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>PT. Buana Lintas Media</td>
-                    <td>Fillah</td>
-                  </tr>
+                  <thead>
+                    <tr>
+                      <td>No</td>
+                      <td>Nama Perusahaan</td>
+                      <td>Penanggung Jawab</td>
+                      <td>Aksi</td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>PT. Buana Lintas Media</td>
+                      <td>Fillah</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>PT. Buana Lintas Media</td>
+                      <td>Fillah</td>
+                    </tr>
+                  </tbody>
                 </table>
               </div>
             </div>
