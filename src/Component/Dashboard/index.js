@@ -35,7 +35,7 @@ function Dashboard() {
 
   const copyLink = (id, token) => {
     let baseUrl = window.location.origin;
-    navigator.clipboard.writeText(`${baseUrl}/${id}/${token}`);
+    navigator.clipboard.writeText(`${baseUrl}/form/${id}/${token}`);
     addAlert("show", "Berhasil Copy Link");
     setTimeout(() => addAlert("close", ""), 5000);
   };
