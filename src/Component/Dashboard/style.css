@@ -40,3 +40,25 @@ tr {
 .dashboard tr:nth-child(even) {
   background-color: #505054;
 }
+
+
+.dashboard table td.aksi {
+  text-align: center;
+}
+
+.btn .copy, .btn .edit, .btn .delete {
+  font-size: 27px;
+}
+
+.btn .copy:hover {
+  color: #5E5CE6 !important;
+}
+
+.btn .edit:hover {
+  color: #5ce67f !important;
+}
+
+.btn .delete:hover {
+  color: #e65c5c !important;
+}
+
