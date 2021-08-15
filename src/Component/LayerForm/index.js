@@ -38,10 +38,12 @@ function LayerForm({ postData, loading }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    let token = (Math.random() + 1).toString(36).slice(-9);
     const newData = {
       information,
       subscriptionFee,
       filledBy,
+      token,
     };
     e.target.reset();
     postData(newData);
