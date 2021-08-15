@@ -10,6 +10,7 @@ export function AnimateProvider({ children }) {
   const [animate, setAnimate] = useState("");
   const [backdrop, setBackDrop] = useState("");
   const [alert, setAlert] = useState("");
+  const [alertMessage, setAlertMessage] = useState("");
 
   function addAnimate(val) {
     setAnimate(val);
@@ -19,8 +20,9 @@ export function AnimateProvider({ children }) {
     setBackDrop(val);
   }
 
-  function addAlert(val) {
+  function addAlert(val, message) {
     setAlert(val);
+    setAlertMessage(message);
   }
 
   const value = {
@@ -29,6 +31,7 @@ export function AnimateProvider({ children }) {
     backdrop,
     addBackdrop,
     alert,
+    alertMessage,
     addAlert,
   };
 
