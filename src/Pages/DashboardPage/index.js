@@ -6,8 +6,8 @@ import { Sidebar, Header, Dashboard, LayerForm } from "../../Component";
 import { AlertSuccess } from "../../Component/Alert";
 
 function DashboardPage() {
-  const { addAlert, alert, addAnimate, addBackdrop } = useAnimate();
-  const [message, setMessage] = useState("");
+  const { addAlert, alert, alertMessage, addAnimate, addBackdrop } =
+    useAnimate();
   const [loading, setLoading] = useState(false);
   const postHandler = async (data) => {
     try {
@@ -16,12 +16,11 @@ function DashboardPage() {
       let storageRef = storage.ref();
       const fileRef = storageRef.child(`images/${data.filledBy.imgName}`);
       await fileRef.put(data.filledBy.ttd);
-      setMessage("Berhasil Membuat Document");
-      addAlert("show");
+      addAlert("show", "Berhasil Membuat Document");
       setLoading(false);
       addAnimate("down");
       addBackdrop("not-show");
-      setTimeout(() => addAlert("close"), 5000);
+      setTimeout(() => addAlert("close", ""), 5000);
     } catch (err) {
       alert(err);
     }
@@ -33,7 +32,7 @@ function DashboardPage() {
       <Sidebar />
       <Dashboard />
       <LayerForm postData={postHandler} loading={loading} />
-      <AlertSuccess message={message} visibility={alert} />
+      <AlertSuccess message={alertMessage} visibility={alert} />
     </>
   );
 }
