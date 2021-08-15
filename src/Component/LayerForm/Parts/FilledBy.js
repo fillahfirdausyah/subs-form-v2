@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { useAuth } from "../../../Context/AuthContext";
-import { useAnimate } from "../../../Context/Animate";
+import { useAuth } from "../../../Helpers/Context/AuthContext";
+import { useAnimate } from "../../../Helpers/Context/Animate";
 
 function FilledBy({ getFilledBy }) {
   const { currentUser } = useAuth();

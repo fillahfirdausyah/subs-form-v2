@@ -1,6 +1,6 @@
 import React from "react";
 
-import { useAnimate } from "../../Context/Animate";
+import { useAnimate } from "../../Helpers/Context/Animate";
 
 // Asset
 import "./style.css";

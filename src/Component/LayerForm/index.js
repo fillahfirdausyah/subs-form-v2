@@ -5,7 +5,7 @@ import "./style.css";
 import Spinner from "../Spinner";
 
 // Context
-import { useAnimate } from "../../Context/Animate";
+import { useAnimate } from "../../Helpers/Context/Animate";
 
 // Component
 import Backdrop from "../Backdrop/";

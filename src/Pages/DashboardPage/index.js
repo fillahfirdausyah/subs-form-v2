@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { storage, database } from "../../firebase";
-import { useAnimate } from "../../Context/Animate";
+import { useAnimate } from "../../Helpers/Context/Animate";
 
 import { Sidebar, Header, Dashboard, LayerForm } from "../../Component";
 import { AlertSuccess } from "../../Component/Alert";

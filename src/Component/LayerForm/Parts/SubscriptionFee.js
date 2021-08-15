@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useAnimate } from "../../../Context/Animate";
+import { useAnimate } from "../../../Helpers/Context/Animate";
 
 function SubscriptionFee({ getSubscriptionFee }) {
   const { animate } = useAnimate();

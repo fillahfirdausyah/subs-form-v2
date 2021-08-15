@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router";
 import { FcGoogle } from "react-icons/fc";
-import { useAuth } from "../../Context/AuthContext";
-import { useAnimate } from "../../Context/Animate";
+import { useAuth } from "../../Helpers/Context/AuthContext";
+import { useAnimate } from "../../Helpers/Context/Animate";
 import { AlertDanger } from "../Alert";
 import Spinner from "../Spinner";
 

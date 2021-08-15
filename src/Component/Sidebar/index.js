@@ -1,8 +1,8 @@
 import React from "react";
 
 // Contex
-import { useAnimate } from "../../Context/Animate";
-import { useAuth } from "../../Context/AuthContext";
+import { useAnimate } from "../../Helpers/Context/Animate";
+import { useAuth } from "../../Helpers/Context/AuthContext";
 
 // Asset
 import "./style.css";

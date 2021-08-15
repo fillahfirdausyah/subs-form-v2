@@ -2,7 +2,7 @@ import React from "react";
 
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import { DashboardPage, LoginPage } from "../Pages";
-import ProtectedRoute from "../Component/ProtectedRoute";
+import ProtectedRoute from "../Helpers/ProtectedRoute";
 
 const index = () => {
   return (

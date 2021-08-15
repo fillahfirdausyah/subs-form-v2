@@ -2,8 +2,8 @@
 import Router from "./Route";
 
 // Context
-import { AnimateProvider } from "./Context/Animate";
-import { AuthProvider } from "./Context/AuthContext";
+import { AnimateProvider } from "./Helpers/Context/Animate";
+import { AuthProvider } from "./Helpers/Context/AuthContext";
 
 function App() {
   return (
