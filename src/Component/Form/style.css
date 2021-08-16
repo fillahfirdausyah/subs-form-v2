@@ -56,3 +56,9 @@ textarea.form-control {
   -moz-appearance: none;
   appearance: none;
 }
+
+.radio-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
