@@ -1,5 +1,6 @@
 import DashboardPage from "./DashboardPage";
 import LoginPage from "./LoginPage";
-import ClientForm from "./ClientForm";
+import ClientFormPage from "./ClientFormPage";
+import FourZeroFour from "./404";
 
-export { DashboardPage, LoginPage, ClientForm };
+export { DashboardPage, LoginPage, ClientFormPage, FourZeroFour };
