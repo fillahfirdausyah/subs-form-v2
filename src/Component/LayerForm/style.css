@@ -92,7 +92,7 @@
   margin-bottom: 40px;
 }
 
-input[type="file"] {
+input[type="file"].custom-file {
   display: none;
 }
 
@@ -105,7 +105,7 @@ input[type="file"] {
   border-radius: 10px;
   outline: none;
   padding: 18px 25px;
-  color: #75755f;
+  color: #727272;
   margin-bottom: 40px;
   display: inline-block;
   font-size: 12px;
