@@ -60,7 +60,7 @@ function FilledBy({ getFilledBy }) {
         required
       />
       <label className="custom-file-upload">
-        <input type="file" onChange={fileHandler} name="ttd" required />
+        <input type="file" className="custom-file" onChange={fileHandler} name="ttd" required />
         {namaFile === "" ? "Tanda Tangan" : <span>{namaFile}</span>}
       </label>
     </>
