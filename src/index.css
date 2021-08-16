@@ -19,8 +19,90 @@ body {
   overflow-x: hidden;
 }
 
+textarea {
+  -webkit-writing-mode: horizontal-tb !important;
+  text-rendering: auto;
+  color: -internal-light-dark(black, white);
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+  appearance: auto;
+  background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+  -webkit-rtl-ordering: logical;
+  flex-direction: column;
+  resize: auto;
+  cursor: text;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  column-count: initial !important;
+  margin: 0em;
+  font: 400 13.3333px Arial;
+  border-width: 1px;
+  border-style: solid;
+  border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+  border-image: initial;
+  padding: 2px;
+  resize: vertical;
+}
+
 .btn {
   background: none;
   border: none;
   cursor: pointer;
+}
+
+.mb-3 {
+  margin-bottom: 1rem !important;
+  display: block;
+}
+
+.card {
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 7px;
+  background-color: #3a3a3c;
+  box-shadow: 2px 3px 12px -5px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 2px 3px 12px -5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 3px 12px -5px rgba(0, 0, 0, 0.75);
+  color: white;
+}
+
+.card .card-header {
+  background-color: transparent;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.125);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 1px 20px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.card .card-body {
+  padding: 20px;
+}
+
+.card .card-body table {
+  color: white !important;
+  text-align: left;
+  width: 100%;
+  border-collapse: collapse;
+  color: rgba(235, 235, 245, 0.3);
+}
+
+.form-text {
+  margin-top: 0.25rem;
+  font-size: 0.875em;
+  color: #6c757d;
+}
+
+.form-control[type="file"]:not(:disabled):not([readonly]) {
+  cursor: pointer;
+}
+
+.form-control[type="file"] {
+  overflow: hidden;
 }

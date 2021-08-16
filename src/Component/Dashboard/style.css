@@ -1,36 +1,3 @@
-.dashboard .card {
-  width: 100%;
-  margin-bottom: 20px;
-  border-radius: 7px;
-  background-color: #3a3a3c;
-  box-shadow: 2px 3px 12px -5px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: 2px 3px 12px -5px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 2px 3px 12px -5px rgba(0, 0, 0, 0.75);
-  color: white;
-}
-
-.dashboard .card .card-header {
-  background-color: transparent;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.125);
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  padding: 1px 20px;
-  box-sizing: border-box;
-  position: relative;
-}
-
-.dashboard .card .card-body {
-  padding: 20px;
-}
-
-.dashboard .card .card-body table {
-  color: white !important;
-  text-align: left;
-  width: 100%;
-  border-collapse: collapse;
-  color: rgba(235, 235, 245, 0.3);
-}
-
 .dashboard table td,
 tr {
   border: 1px solid #ddd;
@@ -41,17 +8,18 @@ tr {
   background-color: #505054;
 }
 
-
 .dashboard table td.aksi {
   text-align: center;
 }
 
-.btn .copy, .btn .edit, .btn .delete {
+.btn .copy,
+.btn .edit,
+.btn .delete {
   font-size: 27px;
 }
 
 .btn .copy:hover {
-  color: #5E5CE6 !important;
+  color: #5e5ce6 !important;
 }
 
 .btn .edit:hover {
@@ -61,4 +29,3 @@ tr {
 .btn .delete:hover {
   color: #e65c5c !important;
 }
-
