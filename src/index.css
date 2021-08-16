@@ -49,14 +49,18 @@ textarea {
   resize: vertical;
 }
 
+label {
+  display: inline-block;
+}
+
 .btn {
   background: none;
   border: none;
   cursor: pointer;
 }
 
-.mb-3 {
-  margin-bottom: 1rem !important;
+div.mb-3 {
+  margin-bottom: 2rem !important;
   display: block;
 }
 
@@ -105,4 +109,35 @@ textarea {
 
 .form-control[type="file"] {
   overflow: hidden;
+}
+
+.form-check {
+  display: block;
+  min-height: 1.5rem;
+  padding-left: 1.4em;
+  margin-bottom: 0.125rem;
+}
+
+.form-check-input {
+  width: 1em;
+  height: 1em;
+  margin-top: 0.25em;
+  vertical-align: top;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: contain;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.form-check .form-check-input {
+  float: left;
+  margin-left: -1.5rem;
+}
+
+.form-check-input[type="radio"] {
+  border-radius: 50%;
+  vertical-align: middle;
+  width: 18px;
+  height: 18px;
 }
