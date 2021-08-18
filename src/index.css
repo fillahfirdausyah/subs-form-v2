@@ -141,3 +141,9 @@ div.mb-3 {
   width: 18px;
   height: 18px;
 }
+
+.form-check-input[type="checkbox"] {
+  vertical-align: middle;
+  width: 16px;
+  height: 16px;
+}
