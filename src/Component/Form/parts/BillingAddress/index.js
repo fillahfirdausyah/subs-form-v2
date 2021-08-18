@@ -1,6 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 
-function BillingAddress() {
+function BillingAddress({ getBillingAddress }) {
+  const [data, setData] = useState({});
+
+  const billingAddressDataHandler = (e) => {
+    const { name, value } = e.target;
+    const newData = {
+      [name]: value,
+    };
+    setData(newData);
+    getBillingAddress(newData);
+  };
+
   return (
     <div className="card mb-3">
       <div className="card-header">
@@ -8,7 +19,12 @@ function BillingAddress() {
       </div>
       <div className="card-body">
         <div className="mb-3">
-          <textarea className="form-control"></textarea>
+          <textarea
+            onChange={billingAddressDataHandler}
+            className="form-control"
+            name="billingAddress"
+            value={data.billingAddress}
+          ></textarea>
         </div>
       </div>
     </div>

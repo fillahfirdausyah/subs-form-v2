@@ -1,6 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 
-function InstallationAddress() {
+function InstallationAddress({ getInstallationAddress }) {
+  const [data, setData] = useState({});
+
+  const installationAddressDataHandler = (e) => {
+    const { name, value } = e.target;
+    const newData = {
+      [name]: value,
+    };
+    setData(newData);
+    getInstallationAddress(newData);
+  };
+
   return (
     <div className="card mb-3">
       <div className="card-header">
@@ -8,7 +19,12 @@ function InstallationAddress() {
       </div>
       <div className="card-body">
         <div className="mb-3">
-          <textarea className="form-control"></textarea>
+          <textarea
+            onChange={installationAddressDataHandler}
+            className="form-control"
+            name="installationAddress"
+            value={data.installationAddress}
+          ></textarea>
         </div>
       </div>
     </div>

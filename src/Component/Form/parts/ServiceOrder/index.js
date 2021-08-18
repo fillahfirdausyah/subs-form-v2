@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Radio from "../../../Radio";
 
@@ -21,7 +21,22 @@ const radioData = [
   },
 ];
 
-function ServiceOrder() {
+function ServiceOrder({ getServiceOrder }) {
+  const [data, setData] = useState({
+    spesifikasiLayanan: "",
+    informasiTambahan: "",
+  });
+
+  const serviceOrderDataHandler = (e) => {
+    const { name, value } = e.target;
+    const newData = {
+      ...data,
+      [name]: value,
+    };
+    setData(newData);
+    getServiceOrder(newData);
+  };
+
   return (
     <div className="card mb-3">
       <div className="card-header">
@@ -32,17 +47,36 @@ function ServiceOrder() {
           <label className="form-label">Jenis Layanan</label>
           <div className="radio-flex">
             {radioData.map((x, index) => (
-              <Radio key={index} label={x.label} name={x.name} id={x.label} />
+              <Radio
+                key={index}
+                label={x.label}
+                name={x.name}
+                id={x.label}
+                value={x.label}
+                onChange={serviceOrderDataHandler}
+              />
             ))}
           </div>
         </div>
         <div className="mb-3">
           <label className="form-label">Spesifikasi Layanan</label>
-          <input type="text" className="form-control" />
+          <input
+            onChange={serviceOrderDataHandler}
+            type="text"
+            className="form-control"
+            value={data.spesifikasiLayanan}
+            name="spesifikasiLayanan"
+          />
         </div>
         <div className="mb-3">
           <label className="form-label">Informasi Tambahan</label>
-          <input type="text" className="form-control" />
+          <input
+            onChange={serviceOrderDataHandler}
+            type="text"
+            className="form-control"
+            value={data.informasiTambahan}
+            name="informasiTambahan"
+          />
         </div>
       </div>
     </div>

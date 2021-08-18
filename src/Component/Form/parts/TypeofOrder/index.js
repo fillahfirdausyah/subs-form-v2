@@ -21,7 +21,12 @@ const radioData = [
   },
 ];
 
-function TypeofOrder() {
+function TypeofOrder({ getTypeofOrder }) {
+  const typeofOrderHandler = (e) => {
+    const { value, checked } = e.target;
+    getTypeofOrder({ [value]: checked });
+  };
+
   return (
     <div className="card mb-3">
       <div className="card-header">
@@ -35,6 +40,7 @@ function TypeofOrder() {
             id={x.label}
             value={x.label}
             name={x.name}
+            onChange={typeofOrderHandler}
           />
         ))}
       </div>
