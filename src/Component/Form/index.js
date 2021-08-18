@@ -30,7 +30,6 @@ function Form() {
   const [documentReq, setDocumentReq] = useState({});
 
   const getTypeofOrder = (data) => {
-    console.log(data);
     setTypeofOrder(data);
   };
   const getCompanyInformation = (data) => {
