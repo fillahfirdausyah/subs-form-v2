@@ -39,11 +39,11 @@
 }
 
 .alert.show {
-  animation: show 0.8s ease forwards;
+  animation: show 0.4s ease forwards;
 }
 
 .alert.close {
-  animation: close 0.8s ease forwards;
+  animation: close 0.4s ease forwards;
 }
 
 @keyframes show {
