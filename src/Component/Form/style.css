@@ -62,3 +62,33 @@ textarea.form-control {
   align-items: center;
   justify-content: space-between;
 }
+
+@media screen and (max-width: 600px) {
+  .client-form-wrapper {
+    background-color: rgb(66, 66, 66);
+    width: 100%;
+    margin: auto;
+    display: flex;
+  }
+
+  .client-form {
+    margin: 40px auto;
+    width: 90%;
+  }
+
+  .radio-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .radio-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
