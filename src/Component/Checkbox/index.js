@@ -1,6 +1,6 @@
 import React from "react";
 
-function CheckBox({ id, value, label, name }) {
+function CheckBox({ id, value, label, name, checked, onChange }) {
   return (
     <div className="form-check">
       <input
@@ -9,6 +9,8 @@ function CheckBox({ id, value, label, name }) {
         id={id}
         value={value}
         name={name}
+        checked={checked && true}
+        onChange={onChange}
       />
       <label htmlFor={id} className="form-check-label">
         {label}
