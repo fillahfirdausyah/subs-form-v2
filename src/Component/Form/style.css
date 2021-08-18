@@ -10,6 +10,27 @@
   width: 75%;
 }
 
+.client-form .btn-proses {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  background-color: #5e5ce6;
+  border-color: #5e5ce6;
+  transition: filter 300ms;
+  border-radius: 6px;
+  color: white;
+}
+
+.client-form .btn-proses span {
+  margin-left: 6px;
+}
+
+.client-form .btn-proses:hover {
+  filter: brightness(1.2);
+}
+
 .form-label {
   display: inline-block;
   margin-bottom: 0.5rem;
