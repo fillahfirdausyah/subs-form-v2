@@ -1,6 +1,6 @@
 import React from "react";
 
-function Radio({ label, name, value, id }) {
+function Radio({ label, name, value, id, onChange }) {
   return (
     <div className="form-check">
       <input
@@ -9,6 +9,7 @@ function Radio({ label, name, value, id }) {
         id={id}
         value={value}
         name={name}
+        onChange={onChange}
       />
       <label htmlFor={id} className="form-check-label">
         {label}
