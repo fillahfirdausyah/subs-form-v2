@@ -7,11 +7,9 @@ function BillingAddress() {
         <h4>Alamat Penagihan</h4>
       </div>
       <div className="card-body">
-        <form>
-          <div className="mb-3">
-            <textarea className="form-control"></textarea>
-          </div>
-        </form>
+        <div className="mb-3">
+          <textarea className="form-control"></textarea>
+        </div>
       </div>
     </div>
   );

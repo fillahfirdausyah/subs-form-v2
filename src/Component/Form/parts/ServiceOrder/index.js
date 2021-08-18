@@ -28,24 +28,22 @@ function ServiceOrder() {
         <h4>Layanan Yang Diminta</h4>
       </div>
       <div className="card-body">
-        <form>
-          <div className="mb-3">
-            <label className="form-label">Jenis Layanan</label>
-            <div className="radio-flex">
-              {radioData.map((x, index) => (
-                <Radio key={index} label={x.label} name={x.name} id={x.label} />
-              ))}
-            </div>
+        <div className="mb-3">
+          <label className="form-label">Jenis Layanan</label>
+          <div className="radio-flex">
+            {radioData.map((x, index) => (
+              <Radio key={index} label={x.label} name={x.name} id={x.label} />
+            ))}
           </div>
-          <div className="mb-3">
-            <label className="form-label">Spesifikasi Layanan</label>
-            <input type="text" className="form-control" />
-          </div>
-          <div className="mb-3">
-            <label className="form-label">Informasi Tambahan</label>
-            <input type="text" className="form-control" />
-          </div>
-        </form>
+        </div>
+        <div className="mb-3">
+          <label className="form-label">Spesifikasi Layanan</label>
+          <input type="text" className="form-control" />
+        </div>
+        <div className="mb-3">
+          <label className="form-label">Informasi Tambahan</label>
+          <input type="text" className="form-control" />
+        </div>
       </div>
     </div>
   );

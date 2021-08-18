@@ -7,16 +7,14 @@ function Signs() {
         <h4>Tanda Tangan</h4>
       </div>
       <div className="card-body">
-        <form>
-          <div className="mb-3">
-            <label className="form-label">Nama Perusahaan</label>
-            <input type="text" className="form-control" />
-          </div>
-          <div className="mb-3">
-            <label className="form-label">Tanda Tangan Nama Perusahaan</label>
-            <input type="file" className="form-control" />
-          </div>
-        </form>
+        <div className="mb-3">
+          <label className="form-label">Nama Perusahaan</label>
+          <input type="text" className="form-control" />
+        </div>
+        <div className="mb-3">
+          <label className="form-label">Tanda Tangan Nama Perusahaan</label>
+          <input type="file" className="form-control" />
+        </div>
       </div>
     </div>
   );
