@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 // Asset
 import "./style.css";
@@ -17,7 +17,7 @@ import {
   TypeofOrder,
 } from "./parts";
 
-function Form() {
+function Form({ postData }) {
   const [typeofOrder, setTypeofOrder] = useState({});
   const [companyInformation, setCompanyInformation] = useState({});
   const [authorized, setAuthorized] = useState({});
@@ -60,10 +60,26 @@ function Form() {
     setDocumentReq(data);
   };
 
+  const submitHandler = (e) => {
+    e.preventDefault();
+    const newData = {
+      typeofOrder,
+      companyInformation,
+      authorized,
+      authorizedFinance,
+      billingAddress,
+      authorizedTechnical,
+      serviceOrder,
+      installationAddress,
+      signs,
+      documentReq,
+    };
+  };
+
   return (
     <div className="client-form-wrapper">
       <div className="client-form">
-        <form>
+        <form onSubmit={submitHandler}>
           {/* Jenis Permintaan */}
           <TypeofOrder getTypeofOrder={getTypeofOrder} />
 
