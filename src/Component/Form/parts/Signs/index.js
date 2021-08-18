@@ -37,6 +37,7 @@ function Signs({ getSigns }) {
         <div className="mb-3">
           <label className="form-label">Nama Perusahaan</label>
           <input
+            required
             onChange={signsDataHandler}
             type="text"
             className="form-control"
@@ -49,6 +50,7 @@ function Signs({ getSigns }) {
             Tanda Tangan {data.namaPerusahaan}
           </label>
           <input
+            required
             onChange={signsFileHanlder}
             type="file"
             className="form-control"

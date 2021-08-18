@@ -4,6 +4,7 @@ function CheckBox({ id, value, label, name, checked, onChange }) {
   return (
     <div className="form-check">
       <input
+        required
         type="checkbox"
         className="form-check-input"
         id={id}

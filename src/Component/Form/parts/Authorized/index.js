@@ -69,6 +69,7 @@ function Authorized({ getAuthorized }) {
         <div className="mb-3">
           <label className="form-label">Nama</label>
           <input
+            required
             onChange={authorizedDataHandler}
             type="text"
             className="form-control"
@@ -81,6 +82,7 @@ function Authorized({ getAuthorized }) {
           <div className="row">
             <div className="col">
               <input
+                required
                 onChange={authorizedDataHandler}
                 type="text"
                 className="form-control"
@@ -91,6 +93,7 @@ function Authorized({ getAuthorized }) {
             </div>
             <div className="col">
               <input
+                required
                 onChange={authorizedDataHandler}
                 type="date"
                 className="form-control"
@@ -103,6 +106,7 @@ function Authorized({ getAuthorized }) {
         <div className="mb-3">
           <label className="form-label">Jabatan</label>
           <input
+            required
             onChange={authorizedDataHandler}
             type="text"
             className="form-control"
@@ -113,6 +117,7 @@ function Authorized({ getAuthorized }) {
         <div className="mb-3">
           <label className="form-label">Telephone</label>
           <input
+            required
             onChange={authorizedDataHandler}
             type="text"
             className="form-control"
@@ -139,6 +144,7 @@ function Authorized({ getAuthorized }) {
         <div className="mb-3">
           <label className="form-label">No. Kartu Identitas</label>
           <input
+            required
             onChange={authorizedDataHandler}
             type="text"
             className="form-control"
@@ -163,6 +169,7 @@ function Authorized({ getAuthorized }) {
             <div className="col">
               {isTanggal ? (
                 <input
+                  required
                   onChange={authorizedDataHandler}
                   type="date"
                   className="form-control"
@@ -178,6 +185,7 @@ function Authorized({ getAuthorized }) {
         <div className="mb-3">
           <label className="form-label">Alamat Email</label>
           <input
+            required
             onChange={authorizedDataHandler}
             type="text"
             className="form-control"

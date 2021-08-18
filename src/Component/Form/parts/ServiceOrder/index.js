@@ -61,6 +61,7 @@ function ServiceOrder({ getServiceOrder }) {
         <div className="mb-3">
           <label className="form-label">Spesifikasi Layanan</label>
           <input
+            required
             onChange={serviceOrderDataHandler}
             type="text"
             className="form-control"
@@ -71,6 +72,7 @@ function ServiceOrder({ getServiceOrder }) {
         <div className="mb-3">
           <label className="form-label">Informasi Tambahan</label>
           <input
+            required
             onChange={serviceOrderDataHandler}
             type="text"
             className="form-control"

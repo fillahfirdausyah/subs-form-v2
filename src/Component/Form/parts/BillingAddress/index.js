@@ -20,6 +20,7 @@ function BillingAddress({ getBillingAddress }) {
       <div className="card-body">
         <div className="mb-3">
           <textarea
+            required
             onChange={billingAddressDataHandler}
             className="form-control"
             name="billingAddress"

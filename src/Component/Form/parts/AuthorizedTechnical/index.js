@@ -30,6 +30,7 @@ function AuthorizedTechnical({ getAuthorizedTechnical }) {
         <div className="mb-3">
           <label className="form-label">Nama</label>
           <input
+            required
             onChange={authorizedTechnicalDataHandler}
             type="text"
             className="form-control"
@@ -40,6 +41,7 @@ function AuthorizedTechnical({ getAuthorizedTechnical }) {
         <div className="mb-3">
           <label className="form-label">Bagian</label>
           <input
+            required
             onChange={authorizedTechnicalDataHandler}
             type="text"
             className="form-control"
@@ -50,6 +52,7 @@ function AuthorizedTechnical({ getAuthorizedTechnical }) {
         <div className="mb-3">
           <label className="form-label">Jabatan</label>
           <input
+            required
             onChange={authorizedTechnicalDataHandler}
             type="text"
             className="form-control"
@@ -60,6 +63,7 @@ function AuthorizedTechnical({ getAuthorizedTechnical }) {
         <div className="mb-3">
           <label className="form-label">Telephone</label>
           <input
+            required
             onChange={authorizedTechnicalDataHandler}
             type="text"
             className="form-control"
@@ -71,6 +75,7 @@ function AuthorizedTechnical({ getAuthorizedTechnical }) {
         <div className="mb-3">
           <label className="form-label">Handphone</label>
           <input
+            required
             onChange={authorizedTechnicalDataHandler}
             type="text"
             className="form-control"
@@ -92,6 +97,7 @@ function AuthorizedTechnical({ getAuthorizedTechnical }) {
         <div className="mb-3">
           <label className="form-label">Alamat Email</label>
           <input
+            required
             onChange={authorizedTechnicalDataHandler}
             type="text"
             className="form-control"

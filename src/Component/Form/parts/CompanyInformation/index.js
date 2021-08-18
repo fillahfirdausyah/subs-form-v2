@@ -35,6 +35,7 @@ function CompanyInformation({ getCompanyInformation }) {
         <div className="mb-3">
           <label className="form-label">Nama Perusahaan</label>
           <input
+            required
             onChange={changeHandler}
             type="text"
             className="form-control"
@@ -56,6 +57,7 @@ function CompanyInformation({ getCompanyInformation }) {
         <div className="mb-3">
           <label className="form-label">Jenis usaha</label>
           <input
+            required
             onChange={changeHandler}
             type="text"
             className="form-control"
@@ -77,6 +79,7 @@ function CompanyInformation({ getCompanyInformation }) {
             <div className="col">
               <label className="form-label">Kota</label>
               <input
+                required
                 onChange={changeHandler}
                 type="text"
                 className="form-control"
@@ -87,6 +90,7 @@ function CompanyInformation({ getCompanyInformation }) {
             <div className="col">
               <label className="form-label">Kode Pos</label>
               <input
+                required
                 onChange={changeHandler}
                 type="text"
                 className="form-control"
@@ -99,6 +103,7 @@ function CompanyInformation({ getCompanyInformation }) {
         <div className="mb-3">
           <label className="form-label">Provinsi</label>
           <input
+            required
             onChange={changeHandler}
             type="text"
             className="form-control"
@@ -120,6 +125,7 @@ function CompanyInformation({ getCompanyInformation }) {
         <div className="mb-3">
           <label className="form-label">Alamat Email</label>
           <input
+            required
             onChange={changeHandler}
             type="text"
             className="form-control"
@@ -130,6 +136,7 @@ function CompanyInformation({ getCompanyInformation }) {
         <div className="mb-3">
           <label className="form-label">NPWP</label>
           <input
+            required
             onChange={changeHandler}
             type="text"
             className="form-control"
@@ -140,6 +147,7 @@ function CompanyInformation({ getCompanyInformation }) {
         <div className="mb-3">
           <label className="form-label">Telephone</label>
           <input
+            required
             onChange={changeHandler}
             type="text"
             className="form-control"

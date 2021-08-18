@@ -4,6 +4,7 @@ function Radio({ label, name, value, id, onChange }) {
   return (
     <div className="form-check">
       <input
+        required
         type="radio"
         className="form-check-input"
         id={id}
