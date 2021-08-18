@@ -2,6 +2,7 @@ import React from "react";
 
 // Asset
 import "./style.css";
+import SaveIcon from "@material-ui/icons/Save";
 
 import {
   Authtorized,
@@ -20,35 +21,42 @@ function Form() {
   return (
     <div className="client-form-wrapper">
       <div className="client-form">
-        {/* Jenis Permintaan */}
-        <TypeofOrder />
+        <form>
+          {/* Jenis Permintaan */}
+          <TypeofOrder />
 
-        {/* Informasi Perusahaan Pelanggan */}
-        <CompanyInformation />
+          {/* Informasi Perusahaan Pelanggan */}
+          <CompanyInformation />
 
-        {/* Penanggun Jawab Perusahaan */}
-        <Authtorized />
+          {/* Penanggun Jawab Perusahaan */}
+          <Authtorized />
 
-        {/* Penanggung Jawab Keuangan */}
-        <AuthorizedFinance />
+          {/* Penanggung Jawab Keuangan */}
+          <AuthorizedFinance />
 
-        {/* Alamat Penagihan */}
-        <BillingAddress />
+          {/* Alamat Penagihan */}
+          <BillingAddress />
 
-        {/* Penanggung Jawab Teknis */}
-        <AuthorizedTechnical />
+          {/* Penanggung Jawab Teknis */}
+          <AuthorizedTechnical />
 
-        {/* Layanan Yang Diminta */}
-        <ServiceOrder />
+          {/* Layanan Yang Diminta */}
+          <ServiceOrder />
 
-        {/* Alamat Installasi */}
-        <InstallationAddress />
+          {/* Alamat Installasi */}
+          <InstallationAddress />
 
-        {/* Tanda Tangan */}
-        <Signs />
+          {/* Tanda Tangan */}
+          <Signs />
 
-        {/* Kelengkapan DOkumen */}
-        <DocumentReq />
+          {/* Kelengkapan DOkumen */}
+          <DocumentReq />
+
+          <button type="submit" className="btn btn-proses">
+            <SaveIcon />
+            <span>Simpan</span>
+          </button>
+        </form>
       </div>
     </div>
   );
