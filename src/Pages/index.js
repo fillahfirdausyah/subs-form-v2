@@ -4,6 +4,7 @@ import ClientFormPage from "./ClientFormPage";
 import FourZeroFour from "./404";
 import FilledFormPage from "./FilledFormPage";
 import SuccessPage from "./SuccessPage";
+import PreviewPage from "./PreviewPage";
 
 export {
   DashboardPage,
@@ -12,4 +13,5 @@ export {
   FourZeroFour,
   FilledFormPage,
   SuccessPage,
+  PreviewPage,
 };
