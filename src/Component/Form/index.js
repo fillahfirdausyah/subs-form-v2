@@ -4,7 +4,7 @@ import { database } from "../../firebase";
 // Asset
 import "./style.css";
 import SaveIcon from "@material-ui/icons/Save";
-import { FourZeroFour } from "../../Pages";
+import { FilledFormPage } from "../../Pages";
 
 import {
   Authtorized,
@@ -20,18 +20,23 @@ import {
 } from "./parts";
 
 function Form({ postData, id, token }) {
-  const [tokenIsValid, setTokenIsValid] = useState(true);
+  const [haveToken, setHaveToken] = useState(null);
 
   useEffect(() => {
-    let ref = database.ref(`data-v2/${id}`);
-    ref.on("value", (snap) => {
-      let theData = snap.val();
-      if (theData.token === token) {
-        setTokenIsValid(true);
-      } else {
-        setTokenIsValid(false);
-      }
-    });
+    let check = localStorage.getItem("document-token");
+    if (check == null) {
+      setHaveToken(false);
+    } else {
+      let ref = database.ref(`data-v2/${id}`);
+      ref.on("value", (snap) => {
+        let theData = snap.val();
+        if (theData.token === check) {
+          setHaveToken(true);
+        } else {
+          setHaveToken(false);
+        }
+      });
+    }
   }, []);
 
   const [typeofOrder, setTypeofOrder] = useState({});
@@ -98,55 +103,59 @@ function Form({ postData, id, token }) {
     postData(newData);
   };
 
-  if (!tokenIsValid) {
-    return <FourZeroFour />;
-  }
-
   return (
-    <div className="client-form-wrapper">
-      <div className="client-form">
-        <form onSubmit={submitHandler}>
-          {/* Jenis Permintaan */}
-          <TypeofOrder getTypeofOrder={getTypeofOrder} />
+    <>
+      {haveToken ? (
+        <FilledFormPage />
+      ) : (
+        <div className="client-form-wrapper">
+          <div className="client-form">
+            <form onSubmit={submitHandler}>
+              {/* Jenis Permintaan */}
+              <TypeofOrder getTypeofOrder={getTypeofOrder} />
 
-          {/* Informasi Perusahaan Pelanggan */}
-          <CompanyInformation getCompanyInformation={getCompanyInformation} />
+              {/* Informasi Perusahaan Pelanggan */}
+              <CompanyInformation
+                getCompanyInformation={getCompanyInformation}
+              />
 
-          {/* Penanggun Jawab Perusahaan */}
-          <Authtorized getAuthorized={getAuthorized} />
+              {/* Penanggun Jawab Perusahaan */}
+              <Authtorized getAuthorized={getAuthorized} />
 
-          {/* Penanggung Jawab Keuangan */}
-          <AuthorizedFinance getAuthorizedFinance={getAuthorizedFinance} />
+              {/* Penanggung Jawab Keuangan */}
+              <AuthorizedFinance getAuthorizedFinance={getAuthorizedFinance} />
 
-          {/* Alamat Penagihan */}
-          <BillingAddress getBillingAddress={getBillingAddress} />
+              {/* Alamat Penagihan */}
+              <BillingAddress getBillingAddress={getBillingAddress} />
 
-          {/* Penanggung Jawab Teknis */}
-          <AuthorizedTechnical
-            getAuthorizedTechnical={getAuthorizedTechnical}
-          />
+              {/* Penanggung Jawab Teknis */}
+              <AuthorizedTechnical
+                getAuthorizedTechnical={getAuthorizedTechnical}
+              />
 
-          {/* Layanan Yang Diminta */}
-          <ServiceOrder getServiceOrder={getServiceOrder} />
+              {/* Layanan Yang Diminta */}
+              <ServiceOrder getServiceOrder={getServiceOrder} />
 
-          {/* Alamat Installasi */}
-          <InstallationAddress
-            getInstallationAddress={getInstallationAddress}
-          />
+              {/* Alamat Installasi */}
+              <InstallationAddress
+                getInstallationAddress={getInstallationAddress}
+              />
 
-          {/* Tanda Tangan */}
-          <Signs getSigns={getSigns} />
+              {/* Tanda Tangan */}
+              <Signs getSigns={getSigns} />
 
-          {/* Kelengkapan DOkumen */}
-          <DocumentReq getDocumentReq={getDocumentReq} />
+              {/* Kelengkapan DOkumen */}
+              <DocumentReq getDocumentReq={getDocumentReq} />
 
-          <button type="submit" className="btn btn-proses">
-            <SaveIcon />
-            <span>Simpan</span>
-          </button>
-        </form>
-      </div>
-    </div>
+              <button type="submit" className="btn btn-proses">
+                <SaveIcon />
+                <span>Simpan</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
+    </>
   );
 }
 

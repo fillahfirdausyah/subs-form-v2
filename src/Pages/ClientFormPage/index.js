@@ -4,20 +4,23 @@ import { database } from "../../firebase";
 
 // Component
 import Form from "../../Component/Form";
-import { FilledFormPage } from "../index";
+import { FourZeroFour } from "../index";
 
 function ClientForm() {
   const { id, token } = useParams();
-  const [haveToken, setHaveToken] = useState(null);
   const history = useHistory();
+  const [tokenIsValid, setTokenIsValid] = useState(true);
 
   useEffect(() => {
-    let check = localStorage.getItem("document-token");
-    if (check == null) {
-      setHaveToken(false);
-    } else {
-      setHaveToken(true);
-    }
+    let ref = database.ref(`data-v2/${id}`);
+    ref.on("value", (snap) => {
+      let theData = snap.val();
+      if (theData.token === token) {
+        setTokenIsValid(true);
+      } else {
+        setTokenIsValid(false);
+      }
+    });
   }, []);
 
   const postData = async (data) => {
@@ -31,10 +34,10 @@ function ClientForm() {
 
   return (
     <>
-      {haveToken ? (
-        <FilledFormPage />
-      ) : (
+      {tokenIsValid ? (
         <Form postData={postData} id={id} token={token} />
+      ) : (
+        <FourZeroFour />
       )}
     </>
   );
