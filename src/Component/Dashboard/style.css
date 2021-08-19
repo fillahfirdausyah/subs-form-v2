@@ -1,3 +1,7 @@
+.dashboard thead {
+  background-color: transparent;
+}
+
 .dashboard table td,
 tr {
   border: 1px solid #ddd;
