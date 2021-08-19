@@ -14,23 +14,28 @@ import DeleteIcon from "@material-ui/icons/Delete";
 
 function Dashboard() {
   const { addAlert, alert, alertMessage } = useAnimate();
-  const [data, setData] = useState([]);
+  const [dataUnfilled, setDataUnfilled] = useState([]);
+  const [dataFilled, setDataFilled] = useState([]);
 
   useEffect(() => {
     let ref = database.ref(`data-v2`);
     ref.on("value", (snap) => {
       const theData = snap.val();
-      const newData = [];
+      const newDataUnfilled = [];
+      const newDataFilled = [];
       for (const key in theData) {
         const x = {
           id: key,
           ...theData[key],
         };
         if (x.status === "unfilled") {
-          newData.push(x);
+          newDataUnfilled.push(x);
+        } else {
+          newDataFilled.push(x);
         }
       }
-      setData(newData);
+      setDataUnfilled(newDataUnfilled);
+      setDataFilled(newDataFilled);
     });
   }, []);
 
@@ -62,18 +67,14 @@ function Dashboard() {
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td>PT. Buana Lintas Media</td>
-                        <td>Fillah</td>
-                        <td></td>
-                      </tr>
-                      <tr>
-                        <td>2</td>
-                        <td>PT. Buana Lintas Media</td>
-                        <td>Fillah</td>
-                        <td></td>
-                      </tr>
+                      {dataFilled.map((x, index) => (
+                        <tr>
+                          <td>{index + 1}</td>
+                          <td>{x.companyInformation.namaPerusahaan}</td>
+                          <td>{x.authorized.nama}</td>
+                          <td></td>
+                        </tr>
+                      ))}
                     </tbody>
                   </table>
                 </div>
@@ -94,7 +95,7 @@ function Dashboard() {
                       </tr>
                     </thead>
                     <tbody>
-                      {data.map((x, index) => (
+                      {dataUnfilled.map((x, index) => (
                         <tr key={x.id}>
                           <td>{index + 1}</td>
                           <td>{x.information.fpb}</td>
