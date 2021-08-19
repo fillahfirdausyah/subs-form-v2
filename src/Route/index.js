@@ -1,7 +1,13 @@
 import React from "react";
 
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
-import { DashboardPage, LoginPage, ClientFormPage, FourZeroFour } from "../Pages";
+import {
+  DashboardPage,
+  LoginPage,
+  ClientFormPage,
+  FourZeroFour,
+  SuccessPage,
+} from "../Pages";
 import ProtectedRoute from "../Helpers/ProtectedRoute";
 
 const index = () => {
@@ -17,6 +23,9 @@ const index = () => {
           </Route>
           <Route path="/form/:id/:token">
             <ClientFormPage />
+          </Route>
+          <Route path="/success">
+            <SuccessPage />
           </Route>
           <ProtectedRoute path="/dashboard" component={DashboardPage} />
           <Route path="*">
