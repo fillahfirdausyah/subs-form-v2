@@ -6,7 +6,7 @@ import "./style.css";
 
 function FourZeroFour() {
   return (
-    <div className="not-found">
+    <div className="not-found" data-aos="zoom-in" data-aos-duration="800">
       <img src={NotFound} alt="" />
       <h2>Halaman Tidak Ditemukan</h2>
       <p>

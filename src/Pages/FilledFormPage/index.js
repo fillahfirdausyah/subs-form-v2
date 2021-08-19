@@ -6,7 +6,7 @@ import Filled from "../../Assets/filled.svg";
 
 function FilledFormPage() {
   return (
-    <div className="filled">
+    <div className="filled" data-aos="zoom-in" data-aos-duration="800">
       <img src={Filled} alt="" />
       <h1>Form sudah terisi</h1>
       <p>
