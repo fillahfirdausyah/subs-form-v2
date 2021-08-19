@@ -73,6 +73,7 @@ function Form({ postData }) {
       installationAddress,
       signs,
       documentReq,
+      status: "filled",
     };
   };
 
