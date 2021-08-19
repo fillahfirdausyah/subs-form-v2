@@ -26,8 +26,9 @@ function Dashboard() {
           id: key,
           ...theData[key],
         };
-
-        newData.push(x);
+        if (x.status === "unfilled") {
+          newData.push(x);
+        }
       }
       setData(newData);
     });
@@ -65,19 +66,13 @@ function Dashboard() {
                         <td>1</td>
                         <td>PT. Buana Lintas Media</td>
                         <td>Fillah</td>
-                        <td>
-                          <button>1</button>
-                          <button>2</button>
-                        </td>
+                        <td></td>
                       </tr>
                       <tr>
                         <td>2</td>
                         <td>PT. Buana Lintas Media</td>
                         <td>Fillah</td>
-                        <td>
-                          <button>1</button>
-                          <button>2</button>
-                        </td>
+                        <td></td>
                       </tr>
                     </tbody>
                   </table>
