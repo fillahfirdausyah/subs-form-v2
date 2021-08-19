@@ -1,9 +1,13 @@
 .not-found {
   text-align: center;
-  margin-top: 40px;
-  width: 100%;
+  color: white;
 }
 
 .not-found img {
   width: 800px;
+  margin-top: 30px;
+}
+
+.not-found h1 {
+  color: #6c63ff;
 }

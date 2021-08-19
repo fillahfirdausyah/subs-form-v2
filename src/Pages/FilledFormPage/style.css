@@ -1,8 +1,13 @@
 .filled {
-    text-align: center;
-    margin-top: 30px;
+  text-align: center;
+  color: white;
 }
 
 .filled img {
-    width: 400px;
+  width: 400px;
+  margin-top: 30px;
+}
+
+.filled h1 {
+  color: #6c63ff;
 }

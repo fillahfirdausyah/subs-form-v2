@@ -8,7 +8,7 @@ function FourZeroFour() {
   return (
     <div className="not-found" data-aos="zoom-in" data-aos-duration="800">
       <img src={NotFound} alt="" />
-      <h2>Halaman Tidak Ditemukan</h2>
+      <h1>Halaman Tidak Ditemukan</h1>
       <p>
         Halaman tidak ditemukan. Silahkan hubungi marketing untuk mendapatkan
         Link Form yang valid
