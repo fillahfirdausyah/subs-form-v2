@@ -44,6 +44,7 @@ function LayerForm({ postData, loading }) {
       subscriptionFee,
       filledBy,
       token,
+      status: "unfilled",
     };
     e.target.reset();
     postData(newData);
