@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { database } from "../../firebase";
 
 // Asset
 import "./style.css";
 import SaveIcon from "@material-ui/icons/Save";
+import { FourZeroFour } from "../../Pages";
 
 import {
   Authtorized,
@@ -17,7 +19,21 @@ import {
   TypeofOrder,
 } from "./parts";
 
-function Form({ postData }) {
+function Form({ postData, id, token }) {
+  const [tokenIsValid, setTokenIsValid] = useState(true);
+
+  useEffect(() => {
+    let ref = database.ref(`data-v2/${id}`);
+    ref.on("value", (snap) => {
+      let theData = snap.val();
+      if (theData.token === token) {
+        setTokenIsValid(true);
+      } else {
+        setTokenIsValid(false);
+      }
+    });
+  }, []);
+
   const [typeofOrder, setTypeofOrder] = useState({});
   const [companyInformation, setCompanyInformation] = useState({});
   const [authorized, setAuthorized] = useState({});
@@ -62,6 +78,9 @@ function Form({ postData }) {
 
   const submitHandler = (e) => {
     e.preventDefault();
+
+    localStorage.setItem("document-token", token);
+
     const newData = {
       typeofOrder,
       companyInformation,
@@ -75,7 +94,13 @@ function Form({ postData }) {
       documentReq,
       status: "filled",
     };
+
+    postData(newData);
   };
+
+  if (!tokenIsValid) {
+    return <FourZeroFour />;
+  }
 
   return (
     <div className="client-form-wrapper">
