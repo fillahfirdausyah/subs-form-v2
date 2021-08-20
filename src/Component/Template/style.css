@@ -15,9 +15,9 @@ textarea:focus {
 }
 
 input.template[type="checkbox"] {
-  margin-top: -2px;
   vertical-align: middle;
   margin-left: 10px;
+  width: 16px;
 }
 
 label.template {
