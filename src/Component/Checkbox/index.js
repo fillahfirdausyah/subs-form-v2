@@ -19,4 +19,26 @@ function CheckBox({ id, value, label, name, checked, onChange }) {
   );
 }
 
+function CheckboxTemplate({ id, value, name, onChange, checked, label }) {
+  return (
+    <>
+      <input
+        required
+        type="checkbox"
+        className="form-check-input"
+        id={id}
+        value={value}
+        name={name}
+        onChange={onChange}
+        checked={checked && true}
+      />
+      <label htmlFor={id} className="form-check-label">
+        {label}
+      </label>
+    </>
+  );
+}
+
 export default CheckBox;
+
+export { CheckboxTemplate };
