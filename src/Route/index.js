@@ -7,6 +7,7 @@ import {
   ClientFormPage,
   FourZeroFour,
   SuccessPage,
+  PreviewPage,
 } from "../Pages";
 import ProtectedRoute from "../Helpers/ProtectedRoute";
 
@@ -21,11 +22,14 @@ const index = () => {
           <Route path="/login">
             <LoginPage />
           </Route>
-          <Route path="/form/:id/:token">
+          <Route path="/form/:id/:token" exact>
             <ClientFormPage />
           </Route>
           <Route path="/success">
             <SuccessPage />
+          </Route>
+          <Route path="/preview/:id/:token">
+            <PreviewPage />
           </Route>
           <ProtectedRoute path="/dashboard" component={DashboardPage} />
           <Route path="*">
