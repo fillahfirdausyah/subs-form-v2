@@ -1,8 +1,43 @@
 import React, { useEffect, useState } from "react";
-import Radio from "../../../Radio";
 import { database } from "../../../../firebase";
 
-function FilledBy({ data, uid, id }) {
+// Component
+import { CheckboxTemplate } from "../../../Checkbox";
+
+const checkboxData = [
+  {
+    label: "Fotokopi KTP / Paspor / Copy of ID / Passport",
+    name: "Fotokpoi KTP Paspor",
+  },
+  {
+    label: "Fotokopi NPWP / Copy of Tax Registered Number",
+    name: "Fotokopi NPWP",
+  },
+  {
+    label: "Surat Kuasa (apabila dikuasakan)",
+    name: "Surat Kuasa",
+  },
+];
+
+function FilledBy({ data, id }) {
+  const [newCheckbocxData, setNewCheckboxData] = useState([]);
+
+  useEffect(() => {
+    let ref = database.ref(`data-v2/${id}`);
+    ref.on("value", (snap) => {
+      let theData = snap.val();
+      checkboxData.forEach((x) => {
+        let key = Object.keys(theData.documentReq);
+        for (let i in key) {
+          if (key[i] === x.name) {
+            x.checked = true;
+          }
+        }
+      });
+    });
+    setNewCheckboxData(checkboxData);
+  }, []);
+
   return (
     <>
       <div className="filled-by">
@@ -38,7 +73,16 @@ function FilledBy({ data, uid, id }) {
               </span>
               <div className="input-document">
                 <div className="row">
-                  <div className="col"></div>
+                  <div className="col">
+                    {newCheckbocxData.map((x, index) => (
+                      <CheckboxTemplate
+                        key={index}
+                        label={x.label}
+                        name={x.name}
+                        checked={x.checked}
+                      />
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>

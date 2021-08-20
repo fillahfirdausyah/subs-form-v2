@@ -17,6 +17,7 @@ function InstallationAddress({ data }) {
                 disabled
                 id=""
                 style={{ width: "90%", height: "90px" }}
+                value={data.installationAddress}
               ></textarea>
             </td>
             <td></td>

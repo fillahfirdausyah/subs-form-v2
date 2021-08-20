@@ -17,6 +17,7 @@ function BillingAddress({ data }) {
                 name=""
                 id=""
                 style={{ width: "90%", height: "90px" }}
+                value={data.billingAddress}
                 disabled
               ></textarea>
             </td>

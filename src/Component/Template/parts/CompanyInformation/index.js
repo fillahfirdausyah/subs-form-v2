@@ -17,7 +17,7 @@ function CompanyInformation({ data }) {
               <p className="font-italic">Company Name</p>
             </td>
             <td>
-              <input type="text" disabled />
+              <input type="text" value={data.namaPerusahaan} disabled />
             </td>
           </tr>
           <tr>
@@ -26,7 +26,7 @@ function CompanyInformation({ data }) {
               <p className="font-italic">Company Group</p>
             </td>
             <td>
-              <input type="text" disabled />
+              <input type="text" value={data.groupPerusahaan} disabled />
             </td>
           </tr>
           <tr>
@@ -35,7 +35,7 @@ function CompanyInformation({ data }) {
               <p className="font-italic">Type of Business</p>
             </td>
             <td>
-              <input type="text" disabled />
+              <input type="text" value={data.jenisUsaha} disabled />
             </td>
           </tr>
           <tr>
@@ -43,15 +43,27 @@ function CompanyInformation({ data }) {
               <p>Alamat /</p> <p className="font-italic">Address</p>
             </td>
             <td>
-              <textarea name="" id="" cols="60" rows="5" disabled></textarea>
+              <textarea
+                name=""
+                id=""
+                cols="60"
+                rows="5"
+                value={data.alamat}
+                disabled
+              ></textarea>
               <tr>
                 <td>
-                  <input type="text" className="input-city" disabled />
+                  <input
+                    type="text"
+                    className="input-city"
+                    value={data.kota}
+                    disabled
+                  />
                   <br />
                   <p>Kota /</p> <p className="font-italic">City</p>
                 </td>
                 <td>
-                  <input type="text" />
+                  <input type="text" value={data.kodePos} disabled />
                   <br />
                   <p>Kode Pos /</p> <p className="font-italic">Zip Code</p>
                 </td>
@@ -63,7 +75,7 @@ function CompanyInformation({ data }) {
               <p>Provinsi /</p> <p className="font-italic">Province</p>
             </td>
             <td>
-              <input type="text" disabled />
+              <input type="text" value={data.provinsi} disabled />
             </td>
           </tr>
           <tr>
@@ -71,7 +83,7 @@ function CompanyInformation({ data }) {
               <p>Alamat Situs /</p> <p className="font-italic">Situs Address</p>
             </td>
             <td>
-              <input disabled type="text" />
+              <input type="text" value={data.alamatSitus} disabled />
             </td>
           </tr>
           <tr>
@@ -79,7 +91,7 @@ function CompanyInformation({ data }) {
               <p>Alamat Email /</p> <p className="font-italic">Email Address</p>
             </td>
             <td>
-              <input disabled type="text" />
+              <input type="text" value={data.alamatEmail} disabled />
             </td>
           </tr>
           <tr>
@@ -87,7 +99,7 @@ function CompanyInformation({ data }) {
               <p>NPWP /</p> <p className="font-italic">Tax Registered Number</p>
             </td>
             <td>
-              <input disabled type="text" />
+              <input type="text" value={data.npwp} disabled />
             </td>
           </tr>
           <tr>
@@ -95,7 +107,7 @@ function CompanyInformation({ data }) {
               <p>Telepone /</p> <p className="font-italic">Phone</p>
             </td>
             <td>
-              <input disabled type="text" />
+              <input type="text" value={data.telephone} disabled />
               <br />
               <p>Kode Area / </p> <p className="font-italic">Area Code</p>
               {" | "}
@@ -107,7 +119,7 @@ function CompanyInformation({ data }) {
               <p>Fax /</p> <p className="font-italic">Phone</p>
             </td>
             <td>
-              <input disabled type="text" />
+              <input type="text" value={data.fax} disabled />
               <br />
               <p>Kode Area / </p> <p className="font-italic">Area Code</p>
               {" | "}

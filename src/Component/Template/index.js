@@ -68,25 +68,25 @@ function Template({ data, id }) {
               <CompanyInformation data={x.companyInformation} />
 
               {/* Authorized */}
-              <Authorized />
+              <Authorized data={x.authorized} id={id} />
 
               {/* Penanggung Jawab Keuangan */}
-              <AuthorizedFinance />
+              <AuthorizedFinance data={x.authorizedFinance} />
 
               {/* Billing Address */}
-              <BillingAddress />
+              <BillingAddress data={x.billingAddress} />
 
               {/* Penanggung Jawab Teknis */}
-              <AuthorizedTechnical />
+              <AuthorizedTechnical data={x.authorizedTechnical} />
 
               {/* Layanan Yang Diminta */}
-              <ServiceOrder />
+              <ServiceOrder data={x.serviceOrder} id={id} />
 
               {/* Alamat Installastion */}
-              <InstallationAddress />
+              <InstallationAddress data={x.installationAddress} />
 
               {/* Biayan Berlangganan */}
-              <SubscriptionFee />
+              <SubscriptionFee data={x.subscriptionFee} />
 
               <div className="terms-and-conditions new-page">
                 <div className="section1">
@@ -240,7 +240,7 @@ function Template({ data, id }) {
               <Signs />
 
               {/* Diisi Oleh */}
-              <FilledBy />
+              <FilledBy data={x.filledBy} id={id} />
             </div>
           </Content>
         ))}

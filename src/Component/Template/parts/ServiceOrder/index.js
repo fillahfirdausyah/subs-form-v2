@@ -2,9 +2,43 @@ import React, { useState, useEffect } from "react";
 import { database } from "../../../../firebase";
 
 // Component
-import Radio from "../../../Radio";
+import { CheckboxTemplate } from "../../../Checkbox";
 
-function ServiceOrder({ data, uid, id }) {
+const checkboxData = [
+  {
+    name: "serviceOrder",
+    label: "INTERNET",
+  },
+  {
+    name: "serviceOrder",
+    label: "VOIP",
+  },
+  {
+    name: "serviceOrder",
+    label: "VPS",
+  },
+  {
+    name: "serviceOrder",
+    label: "SOFTWARE AS SERVICE ",
+  },
+];
+
+function ServiceOrder({ data, id }) {
+  const [newCheckboxData, setNewCheckboxData] = useState([]);
+
+  useEffect(() => {
+    let ref = database.ref(`data-v2/${id}`);
+    ref.on("value", (snap) => {
+      let theData = snap.val();
+      checkboxData.forEach((x) => {
+        if (theData.serviceOrder.serviceOrder == x.label) {
+          x.checked = true;
+        }
+      });
+    });
+    setNewCheckboxData(checkboxData);
+  }, []);
+
   return (
     <div className="services-order">
       <table>
@@ -20,7 +54,16 @@ function ServiceOrder({ data, uid, id }) {
               <p>Jenis Layanan /</p>{" "}
               <p className="font-italic">Kind of Services</p>
             </td>
-            <td className="services" colSpan="2"></td>
+            <td className="services" colSpan="2">
+              {newCheckboxData.map((x, index) => (
+                <CheckboxTemplate
+                  key={index}
+                  label={x.label}
+                  id={index}
+                  checked={x.checked && true}
+                />
+              ))}
+            </td>
           </tr>
           <tr>
             <td>
@@ -28,7 +71,7 @@ function ServiceOrder({ data, uid, id }) {
               <p className="font-italic">Spesification of Services</p>
             </td>
             <td>
-              <input type="text" disabled />
+              <input type="text" value={data.spesifikasiLayanan} disabled />
             </td>
           </tr>
           <tr>
@@ -37,7 +80,7 @@ function ServiceOrder({ data, uid, id }) {
               <p className="font-italic">Additional Info</p>
             </td>
             <td>
-              <input type="text" disabled />
+              <input type="text" value={data.informasiTambahan} disabled />
             </td>
           </tr>
         </tbody>
