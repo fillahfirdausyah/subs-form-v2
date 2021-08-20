@@ -23,19 +23,11 @@ function Form({ postData, id, token }) {
   const [haveToken, setHaveToken] = useState(null);
 
   useEffect(() => {
-    let check = localStorage.getItem("document-token");
-    if (check == null) {
-      setHaveToken(false);
+    let check = localStorage.getItem(id);
+    if (check == token) {
+      setHaveToken(true);
     } else {
-      let ref = database.ref(`data-v2/${id}`);
-      ref.on("value", (snap) => {
-        let theData = snap.val();
-        if (theData.token === check) {
-          setHaveToken(true);
-        } else {
-          setHaveToken(false);
-        }
-      });
+      setHaveToken(false);
     }
   }, []);
 
@@ -84,7 +76,7 @@ function Form({ postData, id, token }) {
   const submitHandler = (e) => {
     e.preventDefault();
 
-    localStorage.setItem("document-token", token);
+    localStorage.setItem(id, token);
 
     const newData = {
       typeofOrder,
