@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { database } from "../../firebase";
 import { useAnimate } from "../../Helpers/Context/Animate";
 
@@ -11,6 +12,7 @@ import Main from "../Main";
 import LinkIcon from "@material-ui/icons/Link";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
+import VisibilityIcon from "@material-ui/icons/Visibility";
 
 function Dashboard() {
   const { addAlert, alert, alertMessage } = useAnimate();
@@ -72,7 +74,14 @@ function Dashboard() {
                           <td>{index + 1}</td>
                           <td>{x.companyInformation.namaPerusahaan}</td>
                           <td>{x.authorized.nama}</td>
-                          <td></td>
+                          <td>
+                            <Link
+                              to={`/preview/${x.id}/${x.token}`}
+                              className="btn"
+                            >
+                              <VisibilityIcon className="copy" color="action" />
+                            </Link>
+                          </td>
                         </tr>
                       ))}
                     </tbody>
