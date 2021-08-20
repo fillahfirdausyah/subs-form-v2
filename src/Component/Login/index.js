@@ -19,7 +19,10 @@ function Login() {
     try {
       setLoading(true);
       const rel = await loginWithGoogle();
-      if (rel.user.email.includes("students.amikom.ac.id")) {
+      if (
+        rel.user.email.includes("buanalintas.co.id") ||
+        rel.user.email.includes("fillahfirdausyah1101")
+      ) {
         history.push("/dashboard");
         setLoading(false);
       } else {
