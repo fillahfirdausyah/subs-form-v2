@@ -72,18 +72,18 @@ function FilledBy({ data, id }) {
                 / Documents Requirements for New Customer
               </span>
               <div className="input-document">
-                <div className="row">
-                  <div className="col">
-                    {newCheckbocxData.map((x, index) => (
+                {newCheckbocxData.map((x, index) => (
+                  <div className="row">
+                    <div className="col">
                       <CheckboxTemplate
                         key={index}
                         label={x.label}
                         name={x.name}
                         checked={x.checked}
                       />
-                    ))}
+                    </div>
                   </div>
-                </div>
+                ))}
               </div>
             </div>
             <td></td>
