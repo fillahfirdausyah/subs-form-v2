@@ -13,8 +13,9 @@ import LinkIcon from "@material-ui/icons/Link";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
 import VisibilityIcon from "@material-ui/icons/Visibility";
+import AutorenewIcon from "@material-ui/icons/Autorenew";
 
-function Dashboard() {
+function Dashboard({ editedHandler }) {
   const { addAlert, alert, alertMessage } = useAnimate();
   const [dataUnfilled, setDataUnfilled] = useState([]);
   const [dataFilled, setDataFilled] = useState([]);
@@ -48,6 +49,21 @@ function Dashboard() {
     setTimeout(() => addAlert("close", ""), 5000);
   };
 
+  const copyLinkEdit = (id, token) => {
+    let baseUrl = window.location.origin;
+    navigator.clipboard.writeText(`${baseUrl}/edit/${id}/${token}`);
+    addAlert("show", "Berhasil Copy Link");
+    setTimeout(() => addAlert("close", ""), 5000);
+  };
+
+  const getEdited = (id) => {
+    let token = (Math.random() + 1).toString(36).slice(-9);
+    const newData = {
+      token,
+    };
+    editedHandler(newData, id);
+  };
+
   return (
     <>
       <div className="dashboard">
@@ -70,7 +86,7 @@ function Dashboard() {
                     </thead>
                     <tbody>
                       {dataFilled.map((x, index) => (
-                        <tr>
+                        <tr key={index}>
                           <td>{index + 1}</td>
                           <td>{x.companyInformation.namaPerusahaan}</td>
                           <td>{x.authorized.nama}</td>
@@ -81,6 +97,24 @@ function Dashboard() {
                             >
                               <VisibilityIcon className="copy" color="action" />
                             </Link>
+                            {x.status == "edit" ? (
+                              <button
+                                className="btn"
+                                onClick={() => copyLinkEdit(x.id, x.token)}
+                              >
+                                <LinkIcon className="copy" color="action" />
+                              </button>
+                            ) : (
+                              <button
+                                className="btn"
+                                onClick={() => getEdited(x.id)}
+                              >
+                                <AutorenewIcon
+                                  className="edit"
+                                  color="action"
+                                />
+                              </button>
+                            )}
                           </td>
                         </tr>
                       ))}
