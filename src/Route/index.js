@@ -8,13 +8,14 @@ import {
   FourZeroFour,
   SuccessPage,
   PreviewPage,
+  ClientFormEidtPage,
 } from "../Pages";
 import ProtectedRoute from "../Helpers/ProtectedRoute";
 
 const index = () => {
   return (
     <>
-      <BrowserRouter forceRefresh>
+      <BrowserRouter>
         <Switch>
           <Route path="/" exact>
             <Redirect to="/login" />
@@ -30,6 +31,9 @@ const index = () => {
           </Route>
           <Route path="/preview/:id/:token">
             <PreviewPage />
+          </Route>
+          <Route path="/edit/:id/:token">
+            <ClientFormEidtPage />
           </Route>
           <ProtectedRoute path="/dashboard" component={DashboardPage} />
           <Route path="*">
