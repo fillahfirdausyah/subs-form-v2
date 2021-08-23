@@ -10,6 +10,7 @@ function ClientForm() {
   const { id, token } = useParams();
   const history = useHistory();
   const [tokenIsValid, setTokenIsValid] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     let ref = database.ref(`data-v2/${id}`);
@@ -24,17 +25,19 @@ function ClientForm() {
   }, []);
 
   const postData = async (data) => {
+    setIsLoading(true);
     await database.ref(`data-v2/${id}`).update(data);
     let storageRef = storage.ref();
     const fileRef = storageRef.child(`images/${data.signs.fileName}`);
     await fileRef.put(data.signs.ttd);
+    setIsLoading(false);
     history.push("/success");
   };
 
   return (
     <>
       {tokenIsValid ? (
-        <Form postData={postData} id={id} token={token} />
+        <Form postData={postData} id={id} token={token} isLoading={isLoading} />
       ) : (
         <FourZeroFour />
       )}
