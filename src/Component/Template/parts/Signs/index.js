@@ -1,9 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { storage } from "../../../../firebase";
 
-function Signs({ data, filledBy }) {
+function Signs({ clientSign, filledBy }) {
   const [image, setImage] = useState("");
-  const [buana, setBuana] = useState("");
+  const [signBuana, setSignBuana] = useState("");
+
+  useEffect(() => {
+    let ref = storage.ref(`images/${filledBy.imgName}`);
+    ref.getDownloadURL().then((url) => {
+      setSignBuana(url);
+    });
+    let ref2 = storage.ref(`images/${clientSign.fileName}`);
+    ref2.getDownloadURL().then((url) => {
+      setImage(url);
+    });
+  }, []);
 
   return (
     <div className="sign">
@@ -14,7 +25,7 @@ function Signs({ data, filledBy }) {
         <h4>*{")"} PT.</h4>
       </div>
       <div className="line-pt-buana">
-        <img src={buana || "https://via.placeholder.com/400x300"} alt="" />
+        <img src={signBuana || "https://via.placeholder.com/400x300"} alt="" />
       </div>
       <div className="line-pt">
         {/* <input type="text" /> */}
