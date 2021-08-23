@@ -6,7 +6,7 @@ import { database } from "../../firebase";
 import Template from "../../Component/Template";
 
 function PreviewPage() {
-  const { id, token } = useParams();
+  const { id } = useParams();
   const [data, setData] = useState([]);
   const [fpb, setFpb] = useState("");
 
