@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
-import { database } from "../../firebase";
+import { database, storage } from "../../firebase";
 
 // Component
 import Form from "../../Component/Form";
@@ -24,11 +24,10 @@ function ClientForm() {
   }, []);
 
   const postData = async (data) => {
-    const newData = {
-      ...data,
-      status: "filled",
-    };
-    await database.ref(`data-v2/${id}`).update(newData);
+    await database.ref(`data-v2/${id}`).update(data);
+    let storageRef = storage.ref();
+    const fileRef = storageRef.child(`images/${data.signs.fileName}`);
+    await fileRef.put(data.signs.ttd);
     history.push("/success");
   };
 
