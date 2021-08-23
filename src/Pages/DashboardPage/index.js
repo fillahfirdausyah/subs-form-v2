@@ -26,11 +26,19 @@ function DashboardPage() {
     }
   };
 
+  const editedHandler = (data, id) => {
+    const newData = {
+      ...data,
+      status: "edit",
+    };
+    database.ref(`data-v2/${id}`).update(newData);
+  };
+
   return (
     <>
       <Header />
       <Sidebar />
-      <Dashboard />
+      <Dashboard editedHandler={editedHandler} />
       <LayerForm postData={postHandler} loading={loading} />
       <AlertSuccess message={alertMessage} visibility={alert} />
     </>
