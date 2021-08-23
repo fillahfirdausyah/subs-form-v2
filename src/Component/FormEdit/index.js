@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import SaveIcon from "@material-ui/icons/Save";
+import Spinner from "../Spinner";
 
 import {
   Authtorized,
@@ -15,7 +16,7 @@ import {
   TypeofOrder,
 } from "./parts/";
 
-function FormEdit({ token, id }) {
+function FormEdit({ token, id, postEditHandler, isLoading }) {
   const [haveToken, setHaveToken] = useState(null);
 
   useEffect(() => {
@@ -39,7 +40,6 @@ function FormEdit({ token, id }) {
   const [documentReq, setDocumentReq] = useState({});
 
   const getTypeofOrder = (data) => {
-    console.log(data);
     setTypeofOrder(data);
   };
   const getCompanyInformation = (data) => {
@@ -70,11 +70,32 @@ function FormEdit({ token, id }) {
     setDocumentReq(data);
   };
 
+  const postEdit = (e) => {
+    e.preventDefault();
+    localStorage.setItem(id, token);
+
+    const newData = {
+      typeofOrder,
+      companyInformation,
+      authorized,
+      authorizedFinance,
+      billingAddress,
+      authorizedTechnical,
+      serviceOrder,
+      installationAddress,
+      signs,
+      documentReq,
+      status: "filled",
+    };
+
+    postEditHandler(newData);
+  };
+
   return (
     <div className="client-form-wrapper">
       <div className="client-form">
         <h1>Edit</h1>
-        <form>
+        <form onSubmit={postEdit}>
           {/* Jenis Permintaan */}
           <TypeofOrder id={id} getTypeofOrder={getTypeofOrder} />
 
@@ -116,10 +137,16 @@ function FormEdit({ token, id }) {
 
           {/* Kelengkapan DOkumen */}
           <DocumentReq getDocumentReq={getDocumentReq} />
-          <button type="submit" className="btn btn-proses">
-            <SaveIcon />
-            <span>Simpan</span>
-          </button>
+          {isLoading ? (
+            <button type="submit" className="btn btn-proses" disabled>
+              <Spinner />
+            </button>
+          ) : (
+            <button type="submit" className="btn btn-proses">
+              <SaveIcon />
+              <span>Simpan</span>
+            </button>
+          )}
         </form>
       </div>
     </div>
