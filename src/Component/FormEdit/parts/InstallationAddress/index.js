@@ -14,6 +14,10 @@ function InstallationAddress({ getInstallationAddress, id }) {
       });
   }, []);
 
+  useEffect(() => {
+    getInstallationAddress(data);
+  }, [data]);
+
   const installationAddressDataHandler = (e) => {
     const { name, value } = e.target;
     const newData = {

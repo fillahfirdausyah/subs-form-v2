@@ -14,6 +14,10 @@ function BillingAddress({ getBillingAddress, id }) {
       });
   }, []);
 
+  useEffect(() => {
+    getBillingAddress(data);
+  }, [data]);
+
   const billingAddressDataHandler = (e) => {
     const { name, value } = e.target;
     const newData = {

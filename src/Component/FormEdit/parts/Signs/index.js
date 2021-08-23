@@ -17,6 +17,10 @@ function Signs({ getSigns, id }) {
       });
   }, []);
 
+  useEffect(() => {
+    getSigns(data);
+  }, [data]);
+
   const signsDataHandler = (e) => {
     const { name, value } = e.target;
     const newData = {
@@ -61,7 +65,6 @@ function Signs({ getSigns, id }) {
             Tanda Tangan {data.namaPerusahaan}
           </label>
           <input
-            required
             onChange={signsFileHanlder}
             type="file"
             className="form-control"

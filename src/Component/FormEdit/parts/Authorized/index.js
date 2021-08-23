@@ -173,7 +173,7 @@ function Authorized({ getAuthorized, id }) {
                 name="masaBerlaku"
                 onChange={selectHandler}
               >
-                <option value="">Pilih</option>
+                <option value="">Masukan Ulang</option>
                 <option value="Seumur Hidup">Seumur Hidup</option>
                 <option value="tanggal">Tanggal</option>
               </select>

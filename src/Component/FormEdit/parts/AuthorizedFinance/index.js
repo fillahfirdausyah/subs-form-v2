@@ -21,6 +21,10 @@ function AuthorizedFinance({ getAuthorizedFinance, id }) {
       });
   }, []);
 
+  useEffect(() => {
+    getAuthorizedFinance(data);
+  }, [data]);
+
   const authorizedFinanceDataHandler = (e) => {
     const { name, value } = e.target;
     const newData = {

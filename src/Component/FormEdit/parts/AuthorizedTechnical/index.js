@@ -22,6 +22,10 @@ function AuthorizedTechnical({ getAuthorizedTechnical, id }) {
       });
   }, []);
 
+  useEffect(() => {
+    getAuthorizedTechnical(data);
+  }, [data]);
+
   const authorizedTechnicalDataHandler = (e) => {
     const { name, value } = e.target;
     const newData = {

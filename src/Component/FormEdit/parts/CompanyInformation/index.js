@@ -27,6 +27,10 @@ function CompanyInformation({ getCompanyInformation, id }) {
       });
   }, []);
 
+  useEffect(() => {
+    getCompanyInformation(data);
+  }, [data]);
+
   const changeHandler = (e) => {
     const { name, value } = e.target;
     const newData = {
