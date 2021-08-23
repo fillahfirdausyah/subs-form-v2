@@ -237,7 +237,7 @@ function Template({ data, id }) {
               </div>
 
               {/* Tanda Tangan */}
-              <Signs />
+              <Signs clientSign={x.signs} filledBy={x.filledBy} />
 
               {/* Diisi Oleh */}
               <FilledBy data={x.filledBy} id={id} />
