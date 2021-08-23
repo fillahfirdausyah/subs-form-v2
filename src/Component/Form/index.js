@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { database } from "../../firebase";
 
 // Asset
 import "./style.css";
 import SaveIcon from "@material-ui/icons/Save";
 import { FilledFormPage } from "../../Pages";
+import Spinner from "../Spinner";
 
 import {
   Authtorized,
@@ -19,7 +19,7 @@ import {
   TypeofOrder,
 } from "./parts";
 
-function Form({ postData, id, token }) {
+function Form({ postData, id, token, isLoading }) {
   const [haveToken, setHaveToken] = useState(null);
 
   useEffect(() => {
@@ -139,10 +139,16 @@ function Form({ postData, id, token }) {
               {/* Kelengkapan DOkumen */}
               <DocumentReq getDocumentReq={getDocumentReq} />
 
-              <button type="submit" className="btn btn-proses">
-                <SaveIcon />
-                <span>Simpan</span>
-              </button>
+              {isLoading ? (
+                <button type="submit" className="btn btn-proses" disabled>
+                  <Spinner />
+                </button>
+              ) : (
+                <button type="submit" className="btn btn-proses">
+                  <SaveIcon />
+                  <span>Simpan</span>
+                </button>
+              )}
             </form>
           </div>
         </div>
