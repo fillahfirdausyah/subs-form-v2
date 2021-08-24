@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 
+import { FilledFormPage } from "../../Pages";
 import SaveIcon from "@material-ui/icons/Save";
 import Spinner from "../Spinner";
 
@@ -92,64 +93,70 @@ function FormEdit({ token, id, postEditHandler, isLoading }) {
   };
 
   return (
-    <div className="client-form-wrapper">
-      <div className="client-form">
-        <h1>Edit</h1>
-        <form onSubmit={postEdit}>
-          {/* Jenis Permintaan */}
-          <TypeofOrder id={id} getTypeofOrder={getTypeofOrder} />
+    <>
+      {haveToken ? (
+        <FilledFormPage />
+      ) : (
+        <div className="client-form-wrapper">
+          <div className="client-form">
+            <h1>Edit</h1>
+            <form onSubmit={postEdit}>
+              {/* Jenis Permintaan */}
+              <TypeofOrder id={id} getTypeofOrder={getTypeofOrder} />
 
-          {/* Informasi Perusahaan Pelanggan */}
-          <CompanyInformation
-            id={id}
-            getCompanyInformation={getCompanyInformation}
-          />
+              {/* Informasi Perusahaan Pelanggan */}
+              <CompanyInformation
+                id={id}
+                getCompanyInformation={getCompanyInformation}
+              />
 
-          {/* Penanggun Jawab Perusahaan */}
-          <Authtorized id={id} getAuthorized={getAuthorized} />
+              {/* Penanggun Jawab Perusahaan */}
+              <Authtorized id={id} getAuthorized={getAuthorized} />
 
-          {/* Penanggung Jawab Keuangan */}
-          <AuthorizedFinance
-            id={id}
-            getAuthorizedFinance={getAuthorizedFinance}
-          />
+              {/* Penanggung Jawab Keuangan */}
+              <AuthorizedFinance
+                id={id}
+                getAuthorizedFinance={getAuthorizedFinance}
+              />
 
-          {/* Alamat Penagihan */}
-          <BillingAddress id={id} getBillingAddress={getBillingAddress} />
+              {/* Alamat Penagihan */}
+              <BillingAddress id={id} getBillingAddress={getBillingAddress} />
 
-          {/* Penanggung Jawab Teknis */}
-          <AuthorizedTechnical
-            id={id}
-            getAuthorizedTechnical={getAuthorizedTechnical}
-          />
+              {/* Penanggung Jawab Teknis */}
+              <AuthorizedTechnical
+                id={id}
+                getAuthorizedTechnical={getAuthorizedTechnical}
+              />
 
-          {/* Layanan Yang Diminta */}
-          <ServiceOrder id={id} getServiceOrder={getServiceOrder} />
+              {/* Layanan Yang Diminta */}
+              <ServiceOrder id={id} getServiceOrder={getServiceOrder} />
 
-          {/* Alamat Installasi */}
-          <InstallationAddress
-            id={id}
-            getInstallationAddress={getInstallationAddress}
-          />
+              {/* Alamat Installasi */}
+              <InstallationAddress
+                id={id}
+                getInstallationAddress={getInstallationAddress}
+              />
 
-          {/* Tanda Tangan */}
-          <Signs id={id} getSigns={getSigns} />
+              {/* Tanda Tangan */}
+              <Signs id={id} getSigns={getSigns} />
 
-          {/* Kelengkapan DOkumen */}
-          <DocumentReq getDocumentReq={getDocumentReq} />
-          {isLoading ? (
-            <button type="submit" className="btn btn-proses" disabled>
-              <Spinner />
-            </button>
-          ) : (
-            <button type="submit" className="btn btn-proses">
-              <SaveIcon />
-              <span>Simpan</span>
-            </button>
-          )}
-        </form>
-      </div>
-    </div>
+              {/* Kelengkapan DOkumen */}
+              <DocumentReq getDocumentReq={getDocumentReq} />
+              {isLoading ? (
+                <button type="submit" className="btn btn-proses" disabled>
+                  <Spinner />
+                </button>
+              ) : (
+                <button type="submit" className="btn btn-proses">
+                  <SaveIcon />
+                  <span>Simpan</span>
+                </button>
+              )}
+            </form>
+          </div>
+        </div>
+      )}
+    </>
   );
 }
 
