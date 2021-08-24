@@ -1,0 +1,56 @@
+.backdrop-edit {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur(0.9px);
+  display: none;
+  overflow: hidden;
+}
+
+.backdrop-edit.show {
+  animation: default 0.5s ease forwards;
+  display: flex;
+  justify-content: center;
+}
+
+.backdrop-edit.show-edit {
+  animation: default 0.5s ease forwards;
+  display: flex;
+  justify-content: center;
+}
+
+.backdrop-edit.not-show-edit {
+  animation: notShow 1s ease forwards;
+  display: flex;
+  justify-content: center;
+}
+
+.backdrop-edit.not-show {
+  animation: notShow 1s ease forwards;
+  display: flex;
+  justify-content: center;
+}
+
+@keyframes default {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes notShow {
+  from {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  to {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
