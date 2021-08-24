@@ -1,17 +1,28 @@
-import React, { useState } from "react";
-import { useParams, useHistory } from "react-router";
+import React, { useState, useEffect } from "react";
+import { useParams, useHistory } from "react-router-dom";
 import { database, storage } from "../../firebase";
-// import { useAnimate } from "../../Helpers/Context/Animate";
 
 // Component
 import FormEdit from "../../Component/FormEdit";
-// import { AlertDanger } from "../../Component/Alert";
+import { FourZeroFour } from "../index";
 
 function ClientFormEidtPage() {
   const { id, token } = useParams();
-  // const { addAlert, alert, alertMessage } = useAnimate();
+  const [tokenIsValid, setTokenIsValid] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   const history = useHistory();
+
+  useEffect(() => {
+    let ref = database.ref(`data-v2/${id}`);
+    ref.on("value", (snap) => {
+      let theData = snap.val();
+      if (theData.token === token) {
+        setTokenIsValid(true);
+      } else {
+        setTokenIsValid(false);
+      }
+    });
+  }, []);
 
   const postEditHandler = async (data) => {
     if (Object.keys(data.documentReq).length !== 0) {
@@ -31,13 +42,16 @@ function ClientFormEidtPage() {
 
   return (
     <>
-      <FormEdit
-        isLoading={isLoading}
-        postEditHandler={postEditHandler}
-        id={id}
-        token={token}
-      />
-      {/* <AlertDanger message={alertMessage} visibility={alert} /> */}
+      {tokenIsValid ? (
+        <FormEdit
+          isLoading={isLoading}
+          postEditHandler={postEditHandler}
+          id={id}
+          token={token}
+        />
+      ) : (
+        <FourZeroFour />
+      )}
     </>
   );
 }
