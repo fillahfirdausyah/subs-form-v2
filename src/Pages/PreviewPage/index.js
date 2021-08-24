@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { database } from "../../firebase";
 
+import PictureAsPdfIcon from "@material-ui/icons/PictureAsPdf";
+
 // Compoenent
 import Template from "../../Component/Template";
 
@@ -24,6 +26,9 @@ function PreviewPage() {
   return (
     <div>
       <Template data={data} id={id} />
+      <button onClick={() => window.print()} className="btn-proses-pdf">
+        <PictureAsPdfIcon />
+      </button>
     </div>
   );
 }
