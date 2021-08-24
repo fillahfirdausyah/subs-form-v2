@@ -81,7 +81,7 @@ function Dashboard({ editedHandler }) {
                         <td>No</td>
                         <td>Nama Perusahaan</td>
                         <td>Penanggung Jawab</td>
-                        <td>Aksi</td>
+                        <td className="aksi">Aksi</td>
                       </tr>
                     </thead>
                     <tbody>
@@ -90,7 +90,7 @@ function Dashboard({ editedHandler }) {
                           <td>{index + 1}</td>
                           <td>{x.companyInformation.namaPerusahaan}</td>
                           <td>{x.authorized.nama}</td>
-                          <td>
+                          <td className="aksi">
                             <Link
                               to={`/preview/${x.id}/${x.token}`}
                               className="btn"
