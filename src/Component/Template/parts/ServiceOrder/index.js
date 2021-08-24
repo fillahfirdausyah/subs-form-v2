@@ -31,6 +31,9 @@ function ServiceOrder({ data, id }) {
     ref.on("value", (snap) => {
       let theData = snap.val();
       checkboxData.forEach((x) => {
+        if (x.checked == true) {
+          x.checked = false;
+        }
         if (theData.serviceOrder.serviceOrder == x.label) {
           x.checked = true;
         }

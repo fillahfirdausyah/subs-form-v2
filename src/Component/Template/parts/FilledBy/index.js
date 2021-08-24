@@ -27,6 +27,9 @@ function FilledBy({ data, id }) {
     ref.on("value", (snap) => {
       let theData = snap.val();
       checkboxData.forEach((x) => {
+        if (x.checked == true) {
+          x.checked = false;
+        }
         let key = Object.keys(theData.documentReq);
         for (let i in key) {
           if (key[i] === x.name) {

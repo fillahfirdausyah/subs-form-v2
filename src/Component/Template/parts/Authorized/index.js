@@ -31,6 +31,9 @@ function Authorized({ data, id }) {
     ref.on("value", (snap) => {
       let theData = snap.val();
       checkboData.forEach((x) => {
+        if (x.checked == true) {
+          x.checked = false;
+        }
         if (theData.authorized.idCard == x.label) {
           x.checked = true;
         }

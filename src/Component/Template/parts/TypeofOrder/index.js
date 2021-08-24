@@ -31,6 +31,9 @@ function TypeofOrder({ id }) {
     ref.on("value", (snap) => {
       let theData = snap.val();
       checkboxData.forEach((x) => {
+        if (x.checked == true) {
+          x.checked = false;
+        }
         if (Object.keys(theData.typeofOrder) == x.label) {
           x.checked = true;
         }
