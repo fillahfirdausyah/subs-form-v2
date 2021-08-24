@@ -15,8 +15,15 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import VisibilityIcon from "@material-ui/icons/Visibility";
 import AutorenewIcon from "@material-ui/icons/Autorenew";
 
-function Dashboard({ editedHandler }) {
-  const { addAlert, alert, alertMessage } = useAnimate();
+function Dashboard({ editedHandler, getID }) {
+  const {
+    addAlert,
+    alert,
+    alertMessage,
+    showLayerFormEdit,
+    layerFormEdit,
+    addBackdropEdit,
+  } = useAnimate();
   const [dataUnfilled, setDataUnfilled] = useState([]);
   const [dataFilled, setDataFilled] = useState([]);
   const history = useHistory();
@@ -67,6 +74,17 @@ function Dashboard({ editedHandler }) {
 
   const redirectToPreview = (id, token) => {
     history.push(`/preview/${id}/${token}`);
+  };
+
+  const showFormEdit = (id) => {
+    if (layerFormEdit === "up") {
+      showLayerFormEdit("down");
+      addBackdropEdit("not-show");
+    } else {
+      showLayerFormEdit("up");
+      addBackdropEdit("show");
+    }
+    getID(id);
   };
 
   return (
@@ -120,7 +138,10 @@ function Dashboard({ editedHandler }) {
                                 />
                               </button>
                             )}
-                            <button className="btn">
+                            <button
+                              className="btn"
+                              onClick={() => showFormEdit(x.id)}
+                            >
                               <EditIcon className="edit" color="action" />
                             </button>
                           </td>
