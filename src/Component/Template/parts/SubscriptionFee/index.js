@@ -18,7 +18,7 @@ function SubscriptionFee({ data }) {
               <span>(One Time Charge)</span>
             </td>
             <td>
-              <input type="text" value={data.biayaSetup} disabled />
+              <input type="text" value={`Rp ${data.biayaSetup}`} disabled />
             </td>
           </tr>
           <tr>
@@ -29,7 +29,7 @@ function SubscriptionFee({ data }) {
               <span>(Monthly Charge)</span>
             </td>
             <td>
-              <input type="text" value={data.biayaLayanan} disabled />
+              <input type="text" value={`Rp ${data.biayaLayanan}`} disabled />
             </td>
           </tr>
         </tbody>
