@@ -99,24 +99,24 @@ section .section1 {
   margin-top: 20px;
 }
 
-.pdf table {
+table {
   width: 100%;
   border: 1px solid black !important;
 }
 
-.pdf table thead {
+table thead {
   background-color: black;
   color: white;
   text-align: left;
 }
 
-.pdf table p {
+table p {
   font-size: 13px;
   display: inline-block;
   font-weight: 500;
 }
 
-.pdf table input {
+table input {
   border-top: none;
   border-left: none;
   border-right: none;
@@ -124,7 +124,7 @@ section .section1 {
   width: 80%;
 }
 
-.pdf table textarea {
+table textarea {
   border: 1px dotted;
   color: black;
 }
@@ -200,12 +200,26 @@ section .section1 {
 }
 
 .filled-by {
-  padding-bottom: 30px;
+  padding-bottom: 40px;
   margin-top: 84px;
 }
 
 .dokumen {
   margin-top: 10px;
+}
+
+.btn-proses-pdf {
+  position: fixed !important;
+  width: 60px !important;
+  height: 60px !important;
+  border-radius: 50px !important;
+  background-color: #243549 !important;
+  /* text-align: center; */
+  /* vertical-align: middle; */
+  /* padding: 10px 10px 10px 10px; */
+  bottom: 40px;
+  right: 200px;
+  color: white !important;
 }
 
 /* .input-document {
@@ -233,7 +247,7 @@ section .section1 {
     background-color: white !important;
   }
 
-  .btn-proses {
+  .btn-proses-pdf {
     display: none;
   }
 

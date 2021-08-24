@@ -103,6 +103,12 @@ div.mb-3 {
   color: #6c757d;
 }
 
+.form-text-force {
+  margin-top: 0.25rem;
+  font-size: 0.875em;
+  color: #ff3535;
+}
+
 .form-control[type="file"]:not(:disabled):not([readonly]) {
   cursor: pointer;
 }
