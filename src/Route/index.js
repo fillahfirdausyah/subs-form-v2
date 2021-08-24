@@ -15,7 +15,7 @@ import ProtectedRoute from "../Helpers/ProtectedRoute";
 const index = () => {
   return (
     <>
-      <BrowserRouter forceRefresh>
+      <BrowserRouter>
         <Switch>
           <Route path="/" exact>
             <Redirect to="/login" />
