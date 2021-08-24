@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { database } from "../../firebase";
 import { useAnimate } from "../../Helpers/Context/Animate";
 
@@ -19,6 +19,7 @@ function Dashboard({ editedHandler }) {
   const { addAlert, alert, alertMessage } = useAnimate();
   const [dataUnfilled, setDataUnfilled] = useState([]);
   const [dataFilled, setDataFilled] = useState([]);
+  const history = useHistory();
 
   useEffect(() => {
     let ref = database.ref(`data-v2`);
@@ -64,6 +65,10 @@ function Dashboard({ editedHandler }) {
     editedHandler(newData, id);
   };
 
+  const redirectToPreview = (id, token) => {
+    history.push(`/preview/${id}/${token}`);
+  };
+
   return (
     <>
       <div className="dashboard">
@@ -91,12 +96,12 @@ function Dashboard({ editedHandler }) {
                           <td>{x.companyInformation.namaPerusahaan}</td>
                           <td>{x.authorized.nama}</td>
                           <td className="aksi">
-                            <Link
-                              to={`/preview/${x.id}/${x.token}`}
+                            <button
                               className="btn"
+                              onClick={() => redirectToPreview(x.id, x.token)}
                             >
                               <VisibilityIcon className="copy" color="action" />
-                            </Link>
+                            </button>
                             {x.status == "edit" ? (
                               <button
                                 className="btn"
@@ -115,6 +120,9 @@ function Dashboard({ editedHandler }) {
                                 />
                               </button>
                             )}
+                            <button className="btn">
+                              <EditIcon className="edit" color="action" />
+                            </button>
                           </td>
                         </tr>
                       ))}
