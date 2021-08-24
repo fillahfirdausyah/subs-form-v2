@@ -22,7 +22,9 @@ function Signs({ clientSign, filledBy }) {
         <h4>*{")"} PT. Buana Lintas Media</h4>
       </div>
       <div className="pt">
-        <h4>*{")"} PT.</h4>
+        <h4>
+          *{")"} {clientSign.namaPerusahaan}
+        </h4>
       </div>
       <div className="line-pt-buana">
         <img src={signBuana || "https://via.placeholder.com/400x300"} alt="" />
