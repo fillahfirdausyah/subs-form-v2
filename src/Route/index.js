@@ -29,10 +29,10 @@ const index = () => {
           <Route path="/success">
             <SuccessPage />
           </Route>
-          <Route path="/preview/:id/:token">
+          <Route path="/preview/:id/:token" exact>
             <PreviewPage />
           </Route>
-          <Route path="/edit/:id/:token">
+          <Route path="/edit/:id/:token" exact>
             <ClientFormEidtPage />
           </Route>
           <ProtectedRoute path="/dashboard" component={DashboardPage} />
