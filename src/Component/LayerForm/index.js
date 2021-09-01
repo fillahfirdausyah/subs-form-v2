@@ -59,11 +59,37 @@ function LayerForm({ postData, loading }) {
           <SubscriptionFee getSubscriptionFee={getSubscriptionFee} />
           <FilledBy getFilledBy={getFilledBy} />
           {loading ? (
-            <button className="btn btn-simpan">
-              <Spinner />
-            </button>
+            <div className="row">
+              <div className="col">
+                <button className="btn btn-simpan">
+                  <Spinner />
+                </button>
+              </div>
+              <div className="col">
+                <button
+                  className="btn btn-cancel"
+                  type="button"
+                  onClick={closeForm}
+                >
+                  Cancel
+                </button>
+              </div>
+            </div>
           ) : (
-            <button className="btn btn-simpan">Buat</button>
+            <div className="row">
+              <div className="col">
+                <button className="btn btn-simpan">Buat</button>
+              </div>
+              <div className="col">
+                <button
+                  className="btn btn-cancel"
+                  type="button"
+                  onClick={closeForm}
+                >
+                  Cancel
+                </button>
+              </div>
+            </div>
           )}
         </form>
       </div>

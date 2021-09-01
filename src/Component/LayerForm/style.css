@@ -128,7 +128,7 @@ input[type="file"].custom-file {
   font-size: 1rem;
   line-height: 1.5;
   border-radius: 0.25rem;
-  width: 85%;
+  width: 70%;
   margin-bottom: 40px;
 }
 
@@ -138,7 +138,18 @@ input[type="file"].custom-file {
   border-color: #5e5ce6;
 }
 
+.layer-form form .btn-cancel {
+  color: #fff;
+  background-color: #ff3c56;
+  border-color: #ff3c56;
+}
+
 .layer-form form .btn-simpan:hover {
   background-color: #817fec;
   border-color: #817fec;
+}
+
+.layer-form form .btn-cancel:hover {
+  background-color: #ff6579;
+  border-color: #ff6579;
 }
