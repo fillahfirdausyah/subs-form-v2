@@ -19,18 +19,20 @@ function Login() {
     try {
       setLoading(true);
       const rel = await loginWithGoogle();
-      if (rel.user.email.includes("buanalintas.co.id")) {
-        history.push("/dashboard");
-        setLoading(false);
-      } else if (rel.user.email.includes("pemburubaikx")) {
-        history.push("/dashboard");
-        setLoading(false);
-      } else {
-        setMessage("Not Authorized ❗");
-        addAlert("show");
-        setTimeout(() => addAlert("close"), 5000);
-        setLoading(false);
-      }
+      history.push("/dashboard");
+      setLoading(false);
+      // if (rel.user.email.includes("buanalintas.co.id")) {
+      //   history.push("/dashboard");
+      //   setLoading(false);
+      // } else if (rel.user.email.includes("pemburubaikx")) {
+      //   history.push("/dashboard");
+      //   setLoading(false);
+      // } else {
+      //   setMessage("Not Authorized ❗");
+      //   addAlert("show");
+      //   setTimeout(() => addAlert("close"), 5000);
+      //   setLoading(false);
+      // }
     } catch (err) {
       setMessage("Terjadi Kesalahan ❗");
       addAlert("show");
