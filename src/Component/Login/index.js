@@ -19,10 +19,10 @@ function Login() {
     try {
       setLoading(true);
       const rel = await loginWithGoogle();
-      if (
-        rel.user.email.includes("buanalintas.co.id") ||
-        rel.user.email.includes("fillahfirdausyah1101")
-      ) {
+      if (rel.user.email.includes("buanalintas.co.id")) {
+        history.push("/dashboard");
+        setLoading(false);
+      } else if (rel.user.email.includes("pemburubaikx")) {
         history.push("/dashboard");
         setLoading(false);
       } else {
