@@ -67,7 +67,7 @@ function LayerForm({ postData, loading }) {
               </div>
               <div className="col">
                 <button
-                  className="btn btn-cancel"
+                  className="btn btn-cancel" 
                   type="button"
                   onClick={closeForm}
                 >

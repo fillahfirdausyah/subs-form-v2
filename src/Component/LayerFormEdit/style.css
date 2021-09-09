@@ -142,3 +142,14 @@ input[type="file"].custom-file {
   background-color: #817fec;
   border-color: #817fec;
 }
+
+.layer-form-edit form .btn-cancel {
+  color: #fff;
+  background-color: #ff3c56;
+  border-color: #ff3c56;
+}
+
+.layer-form-edit form .btn-cancel:hover {
+  background-color: #ff6579;
+  border-color: #ff6579;
+}
