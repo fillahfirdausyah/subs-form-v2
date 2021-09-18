@@ -8,6 +8,7 @@ import Router from "./Route";
 // Context
 import { AnimateProvider } from "./Helpers/Context/Animate";
 import { AuthProvider } from "./Helpers/Context/AuthContext";
+import { DataProvider } from "./Helpers/Context/DataContext";
 
 function App() {
   useEffect(() => {
@@ -19,7 +20,9 @@ function App() {
     <>
       <AuthProvider>
         <AnimateProvider>
-          <Router />
+          <DataProvider>
+            <Router />
+          </DataProvider>
         </AnimateProvider>
       </AuthProvider>
     </>
