@@ -73,7 +73,9 @@ function Dashboard({ editedHandler, getID }) {
   };
 
   const redirectToPreview = (id, token) => {
-    history.push(`/preview/${id}/${token}`);
+    // history.push(`/preview/${id}/${token}`);
+    const win = window.open(`/preview/${id}/${token}`, "_blank");
+    window.focus();
   };
 
   const showFormEdit = (id) => {
