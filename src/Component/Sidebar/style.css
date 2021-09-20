@@ -9,13 +9,14 @@
   border-right: 2px solid black;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .sidebar header {
   margin-top: 20px;
   text-align: center;
   color: white;
-  flex: 1;
+  /* flex: 1; */
 }
 
 .sidebar header hr {
@@ -32,7 +33,7 @@
   padding: 5px;
   box-sizing: border-box;
   border-radius: 18px;
-  flex: 1;
+  /* flex: 1; */
 }
 
 .sidebar nav li.active {
@@ -63,7 +64,7 @@
 }
 
 .sidebar footer {
-  margin-top: 250px;
+  /* margin-top: 250px; */
 }
 
 .sidebar footer hr {
