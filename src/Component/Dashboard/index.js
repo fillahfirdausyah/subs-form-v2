@@ -165,7 +165,7 @@ function Dashboard({ editedHandler, getID }) {
                           <td>{index + 1}</td>
                           <td>{x.companyInformation.namaPerusahaan}</td>
                           <td>{x.authorized.nama}</td>
-                          <td className="aksi">
+                          <td className="aksi filled">
                             <button
                               className="btn"
                               onClick={() => redirectToPreview(x.id, x.token)}

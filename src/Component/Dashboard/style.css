@@ -17,6 +17,12 @@ tr {
   text-align: center;
 }
 
+.dashboard table td.aksi.filled {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
 .btn .copy,
 .btn .edit,
 .btn .delete {
