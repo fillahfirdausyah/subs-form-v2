@@ -169,9 +169,14 @@ function Dashboard({ editedHandler, getID }) {
                             <button
                               className="btn"
                               onClick={() => redirectToPreview(x.id, x.token)}
+                              data-tip
+                              data-for="btnPreview"
                             >
                               <VisibilityIcon className="copy" color="action" />
                             </button>
+                            <ReactTooltip id="btnPreview" type="dark">
+                              <span>Preview Document</span>
+                            </ReactTooltip>
                             {x.status == "edit" ? (
                               <button
                                 className="btn"
@@ -180,22 +185,36 @@ function Dashboard({ editedHandler, getID }) {
                                 <LinkIcon className="copy" color="action" />
                               </button>
                             ) : (
-                              <button
-                                className="btn"
-                                onClick={() => getEdited(x.id)}
-                              >
-                                <AutorenewIcon
-                                  className="edit"
-                                  color="action"
-                                />
-                              </button>
+                              <>
+                                <button
+                                  className="btn"
+                                  onClick={() => getEdited(x.id)}
+                                  data-tip
+                                  data-for="btnEdited"
+                                >
+                                  <AutorenewIcon
+                                    className="edit"
+                                    color="action"
+                                  />
+                                </button>
+                                <ReactTooltip id="btnEdited" type="dark">
+                                  <span>
+                                    Buat link baru untuk diedit client
+                                  </span>
+                                </ReactTooltip>
+                              </>
                             )}
                             <button
                               className="btn"
                               onClick={() => showFormEdit(x.id)}
+                              data-tip
+                              data-for="btnEditData"
                             >
                               <EditIcon className="edit" color="action" />
                             </button>
+                            <ReactTooltip id="btnEditData" type="dark">
+                              <span>Edit Document</span>
+                            </ReactTooltip>
                           </td>
                         </tr>
                       ))}
