@@ -10,12 +10,14 @@ import { useAnimate } from "../../Helpers/Context/Animate";
 // Component
 import Backdrop from "../Backdrop/";
 import Information from "./Parts/Information";
+import ClientInformation from "./Parts/ClientInformation";
 import SubscriptionFee from "./Parts/SubscriptionFee";
 import FilledBy from "./Parts/FilledBy";
 
 function LayerForm({ postData, loading }) {
   const { addAnimate, animate, addBackdrop } = useAnimate();
   const [information, setInformation] = useState({});
+  const [clientInformation, setClientInformation] = useState({});
   const [subscriptionFee, setSubscriptionFee] = useState({});
   const [filledBy, setFilledBy] = useState({});
 
@@ -26,6 +28,10 @@ function LayerForm({ postData, loading }) {
 
   const getInformation = (data) => {
     setInformation(data);
+  };
+
+  const getClientInformation = (data) => {
+    setClientInformation(data);
   };
 
   const getSubscriptionFee = (data) => {
@@ -41,6 +47,7 @@ function LayerForm({ postData, loading }) {
     let token = (Math.random() + 1).toString(36).slice(-9);
     const newData = {
       information,
+      clientInformation,
       subscriptionFee,
       filledBy,
       token,
@@ -56,6 +63,7 @@ function LayerForm({ postData, loading }) {
         <hr onClick={closeForm} />
         <form onSubmit={handleSubmit}>
           <Information getInformation={getInformation} />
+          <ClientInformation getClientInformation={getClientInformation} />
           <SubscriptionFee getSubscriptionFee={getSubscriptionFee} />
           <FilledBy getFilledBy={getFilledBy} />
           {loading ? (
@@ -67,7 +75,7 @@ function LayerForm({ postData, loading }) {
               </div>
               <div className="col">
                 <button
-                  className="btn btn-cancel" 
+                  className="btn btn-cancel"
                   type="button"
                   onClick={closeForm}
                 >
