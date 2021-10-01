@@ -94,7 +94,7 @@ function Dashboard({ editedHandler, getID }) {
       <div className="dashboard">
         <Main title="Dashboard">
           <div className="row">
-            <div className="col-lg-6 col-md-12">
+            <div className="col-lg-7 col-md-12">
               <div className="card">
                 <div className="card-header">
                   <h5>Dokumen Belum Terisi</h5>
@@ -106,6 +106,7 @@ function Dashboard({ editedHandler, getID }) {
                         <td>No</td>
                         <td>Nomor FPB</td>
                         <td>Nama Perusahaan</td>
+                        <td>Nama Client</td>
                         <td className="aksi">Aksi</td>
                       </tr>
                     </thead>
@@ -114,6 +115,8 @@ function Dashboard({ editedHandler, getID }) {
                         <tr key={x.id}>
                           <td>{index + 1}</td>
                           <td>{x.information.fpb}</td>
+                          <td>{x.clientInformation.companyName}</td>
+                          <td>{x.clientInformation.authorized}</td>
                           <td className="aksi">
                             <button
                               className="btn"
@@ -135,7 +138,7 @@ function Dashboard({ editedHandler, getID }) {
                 </div>
               </div>
             </div>
-            <div className="col-lg-6 col-md-12">
+            <div className="col-lg-5 col-md-12">
               <div className="card">
                 <div className="card-header">
                   <h5>List Client</h5>
