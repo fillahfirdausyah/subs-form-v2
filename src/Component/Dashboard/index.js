@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { database } from "../../firebase";
 import { useAnimate } from "../../Helpers/Context/Animate";
+import ReactTooltip from "react-tooltip";
 
 // Component
 import { AlertSuccess } from "../Alert";
@@ -121,7 +122,12 @@ function Dashboard({ editedHandler, getID }) {
                             <button
                               className="btn"
                               onClick={() => copyLink(x.id, x.token)}
+                              data-tip
+                              data-for="btnCopyLink"
                             >
+                              <ReactTooltip id="btnCopyLink" type="dark">
+                                <span>Copy Link Form</span>
+                              </ReactTooltip>
                               <LinkIcon className="copy" color="action" />
                             </button>
                             <button className="btn">
