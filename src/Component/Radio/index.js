@@ -1,10 +1,10 @@
 import React from "react";
 
-function Radio({ label, name, value, id, onChange }) {
+function Radio({ label, name, value, id, onChange, required }) {
   return (
     <div className="form-check">
       <input
-        required
+        required={required && true}
         type="radio"
         className="form-check-input"
         id={id}

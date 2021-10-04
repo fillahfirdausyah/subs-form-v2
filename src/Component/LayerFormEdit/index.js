@@ -9,6 +9,7 @@ import { useAnimate } from "../../Helpers/Context/Animate";
 
 // Component
 import BackdropEdit from "../BackdropEdit";
+import TypeOfOrder from "./Parts/typeOfOrder";
 import SubscriptionFee from "./Parts/SubscriptionFee";
 import FilledBy from "./Parts/FilledBy";
 
@@ -46,6 +47,7 @@ function LayerFormEdit({ id, editData, loading }) {
       <div className={`layer-form-edit ${layerFormEdit}`}>
         <hr onClick={closeForm} />
         <form onSubmit={handleSubmit}>
+          <TypeOfOrder />
           <SubscriptionFee id={id} getSubscriptionFee={getSubscriptionFee} />
           <FilledBy id={id} getFilledBy={getFilledBy} />
           {loading ? (
