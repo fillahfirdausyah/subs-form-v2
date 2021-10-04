@@ -31,7 +31,7 @@ function Form({ postData, id, token, isLoading }) {
     }
   }, []);
 
-  const [typeofOrder, setTypeofOrder] = useState({});
+  // const [typeofOrder, setTypeofOrder] = useState({});
   const [companyInformation, setCompanyInformation] = useState({});
   const [authorized, setAuthorized] = useState({});
   const [authorizedFinance, setAuthorizedFinance] = useState({});
@@ -42,9 +42,9 @@ function Form({ postData, id, token, isLoading }) {
   const [signs, setSigns] = useState({});
   const [documentReq, setDocumentReq] = useState({});
 
-  const getTypeofOrder = (data) => {
-    setTypeofOrder(data);
-  };
+  // const getTypeofOrder = (data) => {
+  //   setTypeofOrder(data);
+  // };
   const getCompanyInformation = (data) => {
     setCompanyInformation(data);
   };
@@ -79,7 +79,7 @@ function Form({ postData, id, token, isLoading }) {
     localStorage.setItem(id, token);
 
     const newData = {
-      typeofOrder,
+      // typeofOrder,
       companyInformation,
       authorized,
       authorizedFinance,
@@ -104,7 +104,7 @@ function Form({ postData, id, token, isLoading }) {
           <div className="client-form">
             <form onSubmit={submitHandler}>
               {/* Jenis Permintaan */}
-              <TypeofOrder getTypeofOrder={getTypeofOrder} />
+              {/* <TypeofOrder getTypeofOrder={getTypeofOrder} /> */}
 
               {/* Informasi Perusahaan Pelanggan */}
               <CompanyInformation

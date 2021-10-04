@@ -153,3 +153,15 @@ input[type="file"].custom-file {
   background-color: #ff6579;
   border-color: #ff6579;
 }
+
+.jenis-permintaan-layer-form-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.jenis-permintaan-layer-form {
+  width: 85%;
+  text-align: center;
+}

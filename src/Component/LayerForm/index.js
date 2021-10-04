@@ -17,6 +17,7 @@ import FilledBy from "./Parts/FilledBy";
 function LayerForm({ postData, loading }) {
   const { addAnimate, animate, addBackdrop } = useAnimate();
   const [information, setInformation] = useState({});
+  const [typeofOrder, setTypeofOrder] = useState({});
   const [clientInformation, setClientInformation] = useState({});
   const [subscriptionFee, setSubscriptionFee] = useState({});
   const [filledBy, setFilledBy] = useState({});
@@ -28,6 +29,10 @@ function LayerForm({ postData, loading }) {
 
   const getInformation = (data) => {
     setInformation(data);
+  };
+
+  const getTypeofOrder = (data) => {
+    setTypeofOrder(data);
   };
 
   const getClientInformation = (data) => {
@@ -47,6 +52,7 @@ function LayerForm({ postData, loading }) {
     let token = (Math.random() + 1).toString(36).slice(-9);
     const newData = {
       information,
+      typeofOrder,
       clientInformation,
       subscriptionFee,
       filledBy,
@@ -63,7 +69,10 @@ function LayerForm({ postData, loading }) {
         <hr onClick={closeForm} />
         <form onSubmit={handleSubmit}>
           <Information getInformation={getInformation} />
-          <ClientInformation getClientInformation={getClientInformation} />
+          <ClientInformation
+            getClientInformation={getClientInformation}
+            getTypeofOrder={getTypeofOrder}
+          />
           <SubscriptionFee getSubscriptionFee={getSubscriptionFee} />
           <FilledBy getFilledBy={getFilledBy} />
           {loading ? (
