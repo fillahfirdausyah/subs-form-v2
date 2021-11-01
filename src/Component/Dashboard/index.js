@@ -130,12 +130,12 @@ function Dashboard({ editedHandler, getID }) {
                               </ReactTooltip>
                               <LinkIcon className="copy" color="action" />
                             </button>
-                            <button className="btn">
+                            {/* <button className="btn">
                               <EditIcon className="edit" color="action" />
                             </button>
                             <button className="btn">
                               <DeleteIcon className="delete" color="action" />
-                            </button>
+                            </button> */}
                           </td>
                         </tr>
                       ))}
