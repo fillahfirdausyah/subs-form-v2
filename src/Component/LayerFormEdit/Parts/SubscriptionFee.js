@@ -9,7 +9,7 @@ function SubscriptionFee({ id, getSubscriptionFee }) {
 
   useEffect(() => {
     if (id === "") {
-      console.log("kosong");
+      console.log("");
     } else {
       database
         .ref(`data-v2/${id}`)
@@ -20,6 +20,10 @@ function SubscriptionFee({ id, getSubscriptionFee }) {
         });
     }
   }, [id]);
+
+  useEffect(() => {
+    getSubscriptionFee(data);
+  }, [data]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
