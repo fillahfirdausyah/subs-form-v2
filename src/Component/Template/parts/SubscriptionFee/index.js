@@ -22,9 +22,11 @@ function SubscriptionFee({ data }) {
             <td>
               {/* <input type="text" value={`Rp ${data.biayaSetup}`} disabled /> */}
               <CurrencyFormat
+                decimalSeparator={""}
+                isNumericString={true}
                 value={data.biayaSetup}
                 displayType={"text"}
-                thousandSeparator={true}
+                thousandSeparator="."
                 prefix={"Rp "}
                 renderText={(value) => (
                   <input type="text" value={`${value},-`} disabled />
@@ -42,9 +44,11 @@ function SubscriptionFee({ data }) {
             <td>
               {/* <input type="text" value={`Rp ${data.biayaLayanan}`} disabled /> */}
               <CurrencyFormat
+                decimalSeparator={""}
+                isNumericString={true}
                 value={data.biayaLayanan}
                 displayType={"text"}
-                thousandSeparator={true}
+                thousandSeparator="."
                 prefix={"Rp "}
                 renderText={(value) => (
                   <input type="text" value={`${value},-`} disabled />
