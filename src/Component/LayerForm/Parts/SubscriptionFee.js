@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useAnimate } from "../../../Helpers/Context/Animate";
+import CurrencyFormat from "react-currency-format";
 
 function SubscriptionFee({ getSubscriptionFee }) {
   const { animate } = useAnimate();

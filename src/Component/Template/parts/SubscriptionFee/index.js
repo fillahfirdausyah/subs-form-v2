@@ -1,5 +1,7 @@
 import React from "react";
 
+import CurrencyFormat from "react-currency-format";
+
 function SubscriptionFee({ data }) {
   return (
     <div className="subscription-fee">
@@ -18,7 +20,16 @@ function SubscriptionFee({ data }) {
               <span>(One Time Charge)</span>
             </td>
             <td>
-              <input type="text" value={`Rp ${data.biayaSetup}`} disabled />
+              {/* <input type="text" value={`Rp ${data.biayaSetup}`} disabled /> */}
+              <CurrencyFormat
+                value={data.biayaSetup}
+                displayType={"text"}
+                thousandSeparator={true}
+                prefix={"Rp "}
+                renderText={(value) => (
+                  <input type="text" value={`${value},-`} disabled />
+                )}
+              />
             </td>
           </tr>
           <tr>
@@ -29,7 +40,16 @@ function SubscriptionFee({ data }) {
               <span>(Monthly Charge)</span>
             </td>
             <td>
-              <input type="text" value={`Rp ${data.biayaLayanan}`} disabled />
+              {/* <input type="text" value={`Rp ${data.biayaLayanan}`} disabled /> */}
+              <CurrencyFormat
+                value={data.biayaLayanan}
+                displayType={"text"}
+                thousandSeparator={true}
+                prefix={"Rp "}
+                renderText={(value) => (
+                  <input type="text" value={`${value},-`} disabled />
+                )}
+              />
             </td>
           </tr>
         </tbody>
