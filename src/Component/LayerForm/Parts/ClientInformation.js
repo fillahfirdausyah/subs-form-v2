@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import Radio from "../../Radio";
+import { useAnimate } from "../../../Helpers/Context/Animate";
 
 const radioData = [
   {
@@ -22,10 +23,21 @@ const radioData = [
 ];
 
 function ClientInformation({ getClientInformation, getTypeofOrder }) {
+  const { animate } = useAnimate();
+
   const [data, setData] = useState({
     companyName: "",
     authorized: "",
   });
+
+  useEffect(() => {
+    if (animate == "up") {
+      setData({
+        companyName: "",
+        authorized: "",
+      });
+    }
+  }, [animate]);
 
   const changeHandler = (e) => {
     const { name, value } = e.target;
