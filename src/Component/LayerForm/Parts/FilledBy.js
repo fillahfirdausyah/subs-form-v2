@@ -25,6 +25,7 @@ function FilledBy({ getFilledBy }) {
     };
 
     setData(newData);
+    getFilledBy(newData);
   };
 
   const fileHandler = (e) => {
@@ -60,7 +61,12 @@ function FilledBy({ getFilledBy }) {
         required
       />
       <label className="custom-file-upload">
-        <input type="file" className="custom-file" onChange={fileHandler} name="ttd" required />
+        <input
+          type="file"
+          className="custom-file"
+          onChange={fileHandler}
+          name="ttd"
+        />
         {namaFile === "" ? "Tanda Tangan" : <span>{namaFile}</span>}
       </label>
     </>

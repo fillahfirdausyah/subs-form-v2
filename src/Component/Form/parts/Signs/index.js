@@ -50,7 +50,6 @@ function Signs({ getSigns }) {
             Tanda Tangan {data.namaPerusahaan}
           </label>
           <input
-            required
             onChange={signsFileHanlder}
             type="file"
             className="form-control"

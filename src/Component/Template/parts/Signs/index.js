@@ -6,14 +6,16 @@ function Signs({ clientSign, filledBy }) {
   const [signBuana, setSignBuana] = useState("");
 
   useEffect(() => {
-    let ref = storage.ref(`images/${filledBy.imgName}`);
-    ref.getDownloadURL().then((url) => {
-      setSignBuana(url);
-    });
-    let ref2 = storage.ref(`images/${clientSign.fileName}`);
-    ref2.getDownloadURL().then((url) => {
-      setImage(url);
-    });
+    if (!storage.ref(`images/${filledBy.imgName}`)) {
+      let ref = storage.ref(`images/${filledBy.imgName}`);
+      ref.getDownloadURL().then((url) => {
+        setSignBuana(url);
+      });
+      let ref2 = storage.ref(`images/${clientSign.fileName}`);
+      ref2.getDownloadURL().then((url) => {
+        setImage(url);
+      });
+    }
   }, []);
 
   return (
@@ -27,11 +29,11 @@ function Signs({ clientSign, filledBy }) {
         </h4>
       </div>
       <div className="line-pt-buana">
-        <img src={signBuana || "https://via.placeholder.com/400x300"} alt="" />
+        {signBuana ? <img src={signBuana} alt="" /> : ""}
       </div>
       <div className="line-pt">
         {/* <input type="text" /> */}
-        <img src={image || "https://via.placeholder.com/400x300"} alt="" />
+        {image ? <img src={image} alt="" /> : ""}
       </div>
     </div>
   );
