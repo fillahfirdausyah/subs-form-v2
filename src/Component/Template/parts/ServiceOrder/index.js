@@ -19,7 +19,7 @@ const checkboxData = [
   },
   {
     name: "serviceOrder",
-    label: "SOFTWARE AS SERVICE ",
+    label: "SOFTWARE AS SERVICE",
   },
 ];
 
